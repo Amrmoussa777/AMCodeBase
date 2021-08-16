@@ -9,20 +9,22 @@
 
 import AVFoundation
 
-class SoundManager{
+open class AMSoundManager{
     
-    static let shared = SoundManager()
+    public static let shared = AMSoundManager()
     var player:AVAudioPlayer?
     private init (){}
     
-    func playMessageSound(){
+    open func playMessageSound(){
+        // add file.mp3 in in assets
         playSound(fileName: "recievedMessage", Ext: "mp3")
         
 
     }
     
     
-    func playSendSound(){
+    open func playSendSound(){
+        // add file.mp3 in in assets
         playSound(fileName: "sendButton", Ext: "mp3")
     }
     
