@@ -122,16 +122,13 @@ extension AMNetworkManagerBase:loginStatusProtocol{
         // handle action veforesign up
         }
     }
-    
-    
-    
 }
 
 
 
 open class AMNetworkManager: AMNetworkManagerBase {
     public static let Shared = AMNetworkManager()
-    private super.init()}
+    private init(){ super.init()}
 }
 
    
