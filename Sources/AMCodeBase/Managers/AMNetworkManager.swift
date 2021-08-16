@@ -7,16 +7,16 @@
 //
 
 import UIKit
-open class AMNetworkManager {
+open class AMNetworkManagerBase {
     
-    public static let Shared = AMNetworkManager()
+//    public static let Shared = AMNetworkManager()
     private var cashe:[NSString:UIImage] = [:]
-    open var baseUrl = ""
+    open var baseUrl :String = ""
     open var currentRootVC:UIViewController?
     
     var userAuthCompletionHandler:((Bool) -> ())?
     
-    private init(){}
+    public init(){}
     
     open func downloadImage(from url:String,completion:@escaping(UIImage)->()){
         
@@ -107,7 +107,7 @@ open class AMNetworkManager {
     
 }//c
 
-extension AMNetworkManager:loginStatusProtocol{
+extension AMNetworkManagerBase:loginStatusProtocol{
     
     func userLoginStatusChanged(ststus: userLoginStatus) {
         switch (ststus) {
@@ -125,11 +125,12 @@ extension AMNetworkManager:loginStatusProtocol{
     
     
 }
-//MARK:- Posting Notification
-extension  AMNetworkManager{
-    
-    
-    
+
+
+
+open class AMNetworkManager: AMNetworkManagerBase {
+    public static let Shared = AMNetworkManager()
+    private override init(){}
 }
 
    
