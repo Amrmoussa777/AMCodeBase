@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UICollectionViewCell {
+public extension UICollectionViewCell {
     var collectionView: UICollectionView? {
         return self.next(of: UICollectionView.self)
     }
@@ -18,13 +18,9 @@ extension UICollectionViewCell {
     }
 }
 
-import UIKit
 
-extension UIResponder {
-    /**
-     * Returns the next responder in the responder chain cast to the given type, or
-     * if nil, recurses the chain until the next responder is nil or castable.
-     */
+
+public extension UIResponder {
     func next<U: UIResponder>(of type: U.Type = U.self) -> U? {
         return self.next.flatMap({ $0 as? U ?? $0.next() })
     }

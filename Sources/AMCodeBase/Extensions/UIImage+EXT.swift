@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension UIImage {
+public extension UIImage {
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
 
         let scale = newWidth / image.size.width

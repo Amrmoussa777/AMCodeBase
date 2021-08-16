@@ -56,7 +56,7 @@ class ProfileHeader: UIView {
             
         ])
         
-        phoneNumberLabel.configureAstelephoneLabel()
+        phoneNumberLabel.textColor = .tertiaryLabel
         translatesAutoresizingMaskIntoConstraints = false
     }
     

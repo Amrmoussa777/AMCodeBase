@@ -47,19 +47,16 @@ open class ProductItemLable: UILabel {
     public func configureAsHeadline(){
         self.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
     }
-    #warning("try addign this")
-    func configureAsProfileHeadline(){
+    
+   open  func configureAsProfileHeadline(){
         self.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         self.textColor = .label
     }
     
-    func configureAsConversationMessage(){
+    open func configureAsConversationMessage(){
         self.textColor = .tertiaryLabel
     }
-    
-    func configureAstelephoneLabel(){
-        self.textColor = .tertiaryLabel
-    }
+  
     
     
 }

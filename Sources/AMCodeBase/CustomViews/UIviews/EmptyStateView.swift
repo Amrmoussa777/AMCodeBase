@@ -9,28 +9,28 @@
 import UIKit
 
 
-class EmptyStateView: UIView {
+open class EmptyStateView: UIView {
     
     let imgView = AvatarImageView()
     let label = ProductItemLable(textAlignment: .center, NoOfLines: 4, size: 20)
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         configure()
         configureLabel()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(img:UIImage,message:String) {
+    convenience public init(img:UIImage,message:String) {
         self.init(frame:.zero)
         setState(image: img, message: message)
     }
     
     
-    private func configure(){
+   open  func configure(){
         backgroundColor = .systemBackground
         translatesAutoresizingMaskIntoConstraints = false
         addSubViews(imgView,label)
@@ -53,7 +53,7 @@ class EmptyStateView: UIView {
         label.textColor = .tertiaryLabel
     }
     
-    func setState(image:UIImage,message:String){
+    open func setState(image:UIImage,message:String){
         DispatchQueue.main.async {
             self.imgView.setImage(image: image)
             self.label.text = message

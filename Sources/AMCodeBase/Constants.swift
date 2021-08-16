@@ -63,14 +63,14 @@ public enum  alertMessages:String,Error {
 }
 
 
-enum ProdcutCardTypes{
+public enum ProdcutCardTypes{
     case communityCount
     case soldCount
 }
 
 
 
-enum userLoginStatus {
+public enum userLoginStatus {
     case loggedin
     case tappedRegisterButton
     case registered

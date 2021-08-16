@@ -110,7 +110,7 @@ open class AMNetworkManagerBase {
 
 extension AMNetworkManagerBase:loginStatusProtocol{
     
-    func userLoginStatusChanged(ststus: userLoginStatus) {
+    open func userLoginStatusChanged(ststus: userLoginStatus) {
         switch (ststus) {
         case .loggedin:
             self.userAuthCompletionHandler?(true) 

@@ -9,14 +9,14 @@
 import Foundation
 
 
-extension Date {
+public extension Date {
     func timeAgoDisplay() -> String {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .full
         return formatter.localizedString(for: self, relativeTo: Date())
     }
     
-    func getDateAndTime() ->String{
+     func getDateAndTime() ->String{
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d, h:mm a"
         let res = formatter.string(from: self)

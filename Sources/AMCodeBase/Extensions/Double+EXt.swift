@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension Double {
-    func getDateStringFromUnixTime() -> String {
+public extension Double {
+     func getDateStringFromUnixTime() -> String {
 //        tiem ago
         let str = Date(timeIntervalSince1970: self).timeAgoDisplay()
         return str

@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIImageView {
+public extension UIImageView {
     
     func downloadImage(fromURL url: String) {
          AMNetworkManager.Shared.downloadImage(from: url) { [weak self] (image) in

@@ -171,7 +171,7 @@ extension LoginVC{
 }
 
 
-protocol  loginStatusProtocol {
+public protocol  loginStatusProtocol {
     func userLoginStatusChanged(ststus:userLoginStatus)
     
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension UITextField {
+public extension UITextField {
     
   
     

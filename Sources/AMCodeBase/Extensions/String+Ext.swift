@@ -9,7 +9,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
 
     var isValidEmail: Bool {
         let emailFormat         = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
@@ -18,7 +18,7 @@ extension String {
     }
 
 
-    var isValidPassword: Bool {
+     var isValidPassword: Bool {
         //Regex restricts to 8 character minimum, 1 capital letter, 1 lowercase letter, 1 number
         //If you have different requirements a google search for "password requirement regex" will help
         let passwordFormat      = "(?=.*[A-Za-z0-9]).{8,}"
@@ -47,14 +47,14 @@ extension String {
                │
                username is 8-20 characters long */
     
-    var isValidUserName:Bool{
+     var isValidUserName:Bool{
         let userNameFormat = "^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._ ]+(?<![_.])$"
         let userNamePredicate = NSPredicate(format: "SELF MATCHES %@", userNameFormat)
         return userNamePredicate.evaluate(with: self)
     }
 
 
-    func removeWhitespaces() -> String {
+     func removeWhitespaces() -> String {
         return components(separatedBy: .whitespaces).joined()
     }
 }
