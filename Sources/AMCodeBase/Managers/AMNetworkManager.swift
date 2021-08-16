@@ -9,14 +9,15 @@
 import UIKit
 open class AMNetworkManagerBase {
     
-//    public static let Shared = AMNetworkManager()
     private var cashe:[NSString:UIImage] = [:]
     open var baseUrl :String = ""
     open var currentRootVC:UIViewController?
     
     var userAuthCompletionHandler:((Bool) -> ())?
     
-    public init(){}
+    public init(baseUrl:String = ""){
+        self.baseUrl = baseUrl
+    }
     
     open func downloadImage(from url:String,completion:@escaping(UIImage)->()){
         
@@ -130,7 +131,7 @@ extension AMNetworkManagerBase:loginStatusProtocol{
 
 open class AMNetworkManager: AMNetworkManagerBase {
     public static let Shared = AMNetworkManager()
-    private override init(){}
+    private super.init()}
 }
 
    
