@@ -8,15 +8,15 @@
 import UIKit
 
 
-class AMPLayButton: AMButton {
+open class AMPLayButton: AMButton {
     
     
-    override init(text: String, bGColor: UIColor, iconImage: UIImage? = Images.bagImage) {
+    override public init(text: String, bGColor: UIColor, iconImage: UIImage? = Images.bagImage) {
         super.init(text: text, bGColor: bGColor, iconImage: iconImage)
         configure()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
