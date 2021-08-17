@@ -9,7 +9,7 @@
 import UIKit
 
                 
-class ShareTextFeild:UITextField{
+class AMTextFeild:UITextField{
     
     lazy var originalPassword = ""
     
@@ -59,7 +59,7 @@ class ShareTextFeild:UITextField{
     
 }
 
-extension ShareTextFeild{
+extension AMTextFeild{
     func configurePasswordView(){
         tintColor = UIColor.clear
         

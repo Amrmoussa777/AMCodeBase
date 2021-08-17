@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ProductItemLable: UILabel {
+open class AMItemLable: UILabel {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -14,7 +14,7 @@ class ProfileHeader: UIView {
     let imageView = AvatarImageView()
     let nameLabel = ProfileUserName()
     let ratingView  = RatingUIView()
-    let phoneNumberLabel = ProductItemLable(textAlignment: .center, NoOfLines: 1, size: 15)
+    let phoneNumberLabel = AMItemLable(textAlignment: .center, NoOfLines: 1, size: 15)
     
     
     override init(frame: CGRect) {

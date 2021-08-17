@@ -146,7 +146,7 @@ public extension UIView {
         
         
         let imageAvatar  = AvatarImageView()
-        let desc         = ProductItemLable(textAlignment: .center, NoOfLines: 3, size: 18)
+        let desc         = AMItemLable(textAlignment: .center, NoOfLines: 3, size: 18)
         let actionButton = AMButton(text: buttonLabel, bGColor: actionButtonColor,iconImage: buttonImage)
         
         

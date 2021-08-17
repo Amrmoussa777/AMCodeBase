@@ -13,7 +13,7 @@ open class AMItemCell<ItemT>: UICollectionViewCell {
     // dont foreget to assign cell id in subClass
     
      let ProductImageView   = AMAvatarImage(frame: .zero)
-     let productDescLabel   = ProductItemLable(textAlignment: .left)
+     let productDescLabel   = AMItemLable(textAlignment: .left)
      let commuPriceLabel    = ProductPriceLabel(Size: 20, color: .orange)
      let indivPriceLabel    = ProductPriceLabel(Size: 16, color: .lightGray)
      let productInfoView    = ProductCardView()

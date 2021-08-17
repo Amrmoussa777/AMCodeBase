@@ -13,7 +13,7 @@ class RegisterVC: UIViewController {
     static let shared =  RegisterVC()
     
     let imageView = AvatarImageView()
-    let registerLabel = ProductItemLable(textAlignment: .left, NoOfLines: 1, size: 25)
+    let registerLabel = AMItemLable(textAlignment: .left, NoOfLines: 1, size: 25)
     let registerButton = AMButton(text: "Next", bGColor: .blue, iconImage: Images.nextButton)
     
     var collectioView:UICollectionView!
@@ -23,8 +23,8 @@ class RegisterVC: UIViewController {
     //Form Components
     //1
     
-    let emailFeild = ShareTextFeild(placeHolder: "Email ID", placeholderImage: Images.emailImage!)
-    let passwordFeild = ShareTextFeild(placeHolder: "Password", placeholderImage: Images.passwordImage!)
+    let emailFeild = AMTextFeild(placeHolder: "Email ID", placeholderImage: Images.emailImage!)
+    let passwordFeild = AMTextFeild(placeHolder: "Password", placeholderImage: Images.passwordImage!)
     
     //2
     // image picker
@@ -32,10 +32,10 @@ class RegisterVC: UIViewController {
     let imagePicker     = UIImagePickerController()
     var userImage:UIImage?
     
-    let userNameFeild  = ShareTextFeild(placeHolder: "Type your user name ", placeholderImage: Images.userNameImage!)
+    let userNameFeild  = AMTextFeild(placeHolder: "Type your user name ", placeholderImage: Images.userNameImage!)
     
     //3
-    let mobileFeild = ShareTextFeild(placeHolder: "Enter valid mobile number", placeholderImage: Images.phoneImage!)
+    let mobileFeild = AMTextFeild(placeHolder: "Enter valid mobile number", placeholderImage: Images.phoneImage!)
     
     //
     var delegate:loginStatusProtocol?

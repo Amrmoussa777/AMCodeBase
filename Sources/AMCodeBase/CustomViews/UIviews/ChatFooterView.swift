@@ -11,7 +11,7 @@ import UIKit
 
 class ChatFooterView: UIView {
     
-    let textFeild = ShareTextFeild(placeHolder: "Write your message...", placeholderImage: Images.swriteImage!)
+    let textFeild = AMTextFeild(placeHolder: "Write your message...", placeholderImage: Images.swriteImage!)
     let sendButton = AMSendButton(bGColor: .orange, iconImage: Images.sendImage)
     
     override init(frame: CGRect) {

@@ -13,11 +13,11 @@ open class LoginVC: UIViewController {
     
     
     let imageView = AvatarImageView()
-    let loginLabel = ProductItemLable(textAlignment: .left, NoOfLines: 1, size: 25)
-    let emailText = ShareTextFeild(placeHolder: " Email ID ", placeholderImage: Images.emailImage! )
-    let passwordText =  ShareTextFeild(placeHolder: " Password", placeholderImage: Images.passwordImage!)
+    let loginLabel = AMItemLable(textAlignment: .left, NoOfLines: 1, size: 25)
+    let emailText = AMTextFeild(placeHolder: " Email ID ", placeholderImage: Images.emailImage! )
+    let passwordText =  AMTextFeild(placeHolder: " Password", placeholderImage: Images.passwordImage!)
     let loginButton = AMButton(text: "Login", bGColor: .orange, iconImage: AlertImages.unlockImage)
-    let seconderyLabel = ProductItemLable(textAlignment: .center, NoOfLines: 1, size: 15)
+    let seconderyLabel = AMItemLable(textAlignment: .center, NoOfLines: 1, size: 15)
     let registerButton = AMButton(text: "Register", bGColor: .systemBlue, iconImage: AlertImages.registerImage)
 
     var delegate:loginStatusProtocol?

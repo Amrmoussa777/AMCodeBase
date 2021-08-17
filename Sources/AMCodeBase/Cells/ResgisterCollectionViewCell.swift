@@ -12,7 +12,7 @@ open class ResgisterCollectionViewCell: UICollectionViewCell {
     
     static let cellID = "RegisterCellID"
     
-    let infoLabel = ProductItemLable(textAlignment: .center, NoOfLines: 0, size: 15)
+    let infoLabel = AMItemLable(textAlignment: .center, NoOfLines: 0, size: 15)
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()

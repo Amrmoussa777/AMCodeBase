@@ -12,11 +12,11 @@ class ProfileInfoView: UIView {
     let favouritesView = UIView()
     let ordersView = UIView()
     
-    let favsLabelSubHeader = ProductItemLable(textAlignment: .center)
-    let orderLabelSubHeader = ProductItemLable(textAlignment: .center)
+    let favsLabelSubHeader = AMItemLable(textAlignment: .center)
+    let orderLabelSubHeader = AMItemLable(textAlignment: .center)
     
-    let orderCoutnLabel = ProductItemLable(textAlignment: .center, NoOfLines: 1, size: 25)
-    let favCountLabel = ProductItemLable(textAlignment: .center, NoOfLines: 1, size: 25)
+    let orderCoutnLabel = AMItemLable(textAlignment: .center, NoOfLines: 1, size: 25)
+    let favCountLabel = AMItemLable(textAlignment: .center, NoOfLines: 1, size: 25)
     
     
     override init(frame: CGRect) {

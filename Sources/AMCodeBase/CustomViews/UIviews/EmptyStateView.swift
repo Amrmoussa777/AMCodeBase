@@ -12,7 +12,7 @@ import UIKit
 open class EmptyStateView: UIView {
     
     let imgView = AvatarImageView()
-    let label = ProductItemLable(textAlignment: .center, NoOfLines: 4, size: 20)
+    let label = AMItemLable(textAlignment: .center, NoOfLines: 4, size: 20)
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
