@@ -8,19 +8,19 @@
 
 import UIKit
 
-open class ProductAvatar: UIImageView {
+open class AMAvatarImage: UIImageView {
     let ImgPlaceHolder = Images.productImgPlaceholder
     
-    public override init(frame: CGRect) {
+    public  init(frame: CGRect,tintColor:UIColor = .orange) {
         super.init(frame: frame) 
-        configureImageView()
+        configureImageView(newTintColor:tintColor)
     }   
     
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureImageView(){
+    private func configureImageView(newTintColor:UIColor){
         layer.cornerRadius = 10
         clipsToBounds = true
         image = ImgPlaceHolder

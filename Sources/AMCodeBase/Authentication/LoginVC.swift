@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class LoginVC: UIViewController {
+#warning("try")
+open class LoginVC: UIViewController {
     
     
     
@@ -23,7 +23,7 @@ class LoginVC: UIViewController {
     var delegate:loginStatusProtocol?
     var headImageimage:UIImage?
     
-    override func viewDidLoad() {
+    override public func  viewDidLoad() {
         super.viewDidLoad()
         configureLayout()
         configureLoginButton()
@@ -33,11 +33,11 @@ class LoginVC: UIViewController {
     
     
     
-    init(){
+   public  init(){
         super.init(nibName: nil, bundle: nil)
     }
     
-     required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

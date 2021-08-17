@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+#warning("new")
 class RegisterVC: UIViewController {
     
     static let shared =  RegisterVC()
