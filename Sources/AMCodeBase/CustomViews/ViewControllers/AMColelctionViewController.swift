@@ -22,7 +22,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
         configureView()
         chanegCellSize()
     }
-    open func addCollectionViewToView(){}
+    
     
     open func configureView(){
         // override this mehtod to  change collectionView configuration and don't forget to add super.configureView()
