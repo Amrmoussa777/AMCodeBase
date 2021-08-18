@@ -43,7 +43,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     }
     
   
-    func registerNewCell(newCell:AMCollectionViewCell.Type){
+    open  func registerNewCell(newCell:AMCollectionViewCell.Type){
         AMCollectionView.register(newCell.self, forCellWithReuseIdentifier:newCell.cellID)
     }
     
