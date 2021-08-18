@@ -55,6 +55,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = AMCollectionView.dequeueReusableCell(withReuseIdentifier: cellType.cellID, for: indexPath) as! cellType
+        
         return cell
     }
     
@@ -84,7 +85,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
 
 public protocol AMCelldelegate {
      static var cellID: String {get set }
-     
+    var item:Codable?
 }
 
 
