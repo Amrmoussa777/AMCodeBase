@@ -54,8 +54,8 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     }
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = AMCollectionView.dequeueReusableCell(withReuseIdentifier: cellType.cellID, for: indexPath) as! cellType
-        
+        var cell = AMCollectionView.dequeueReusableCell(withReuseIdentifier: cellType.cellID, for: indexPath) as! cellType
+        cell.item = items[indexPath.row]
         return cell
     }
     
