@@ -19,23 +19,25 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        addCollectionViewToView()
         configureView()
+        chanegCellSize()
     }
     open func addCollectionViewToView(){}
     
     open func configureView(){
+        // override this mehtod to  change collectionView configuration and don't forget to add super.configureView()
         AMCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         AMCollectionView.register(cellType.self, forCellWithReuseIdentifier:cellType.cellID)
         AMCollectionView.delegate = self
         AMCollectionView.dataSource = self
         AMCollectionView.translatesAutoresizingMaskIntoConstraints = false
         AMCollectionView.backgroundColor = .systemBackground
-        let width = AMCollectionView.frame.width
-        self.cellSize = CGSize(width:width, height: 150)
     }
 
-    
+    open func chanegCellSize(size:CGSize = .init(width: 0, height: 0)){
+        // override this mehtod and change cellSize
+        self.cellSize = size
+    }
     open func UpadateItem(items:[Item]){
         self.items = items
         self.AMCollectionView.reloadData()
