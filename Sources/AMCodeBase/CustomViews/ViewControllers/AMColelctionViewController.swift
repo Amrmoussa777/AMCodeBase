@@ -85,7 +85,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
 
 public protocol AMCelldelegate {
      static var cellID: String {get set }
-    var item:Codable?
+     var item:Codable? { get set }
 }
 
 
