@@ -9,12 +9,12 @@
 import UIKit
 
 
-public struct User {
+public struct User :Codable{
     let id:String
     let userName:String
     let userRating:Int
     var avatarUrl:String
-    var image:UIImage?
+//    var image:UIImage?
     let email:String
     let phoneNumber:String
 }
