@@ -34,9 +34,9 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
         AMCollectionView.backgroundColor = .systemBackground
     }
 
-    open func chanegCellSize(size:CGSize = .init(width: 0, height: 0)){
+    open func chanegCellSize(){
         // override this mehtod and change cellSize
-        self.cellSize = size
+        self.cellSize = .init(width: AMCollectionView.frame.width, height: 100)
     }
     open func UpadateItem(items:[Item]){
         self.items = items
@@ -54,8 +54,8 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     }
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = AMCollectionView.dequeueReusableCell(withReuseIdentifier: cellType.cellID, for: indexPath) as! cellType
-        cell.item = items[indexPath.row]
+        let cell = AMCollectionView.dequeueReusableCell(withReuseIdentifier: cellType.cellID, for: indexPath) as! cellType
+        cell.updateItem(item: items[indexPath.row])
         return cell
     }
     
@@ -85,8 +85,15 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
 
 public protocol AMCelldelegate {
      static var cellID: String {get set }
-     var item:Codable? { get set }
+    func updateItem(item:Codable)
 }
+
+
+
+
+
+
+
 
 
 
