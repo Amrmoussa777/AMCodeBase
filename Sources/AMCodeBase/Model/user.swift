@@ -10,12 +10,12 @@ import UIKit
 
 
 public struct User :Codable{
-    let id:String
-    let userName:String
-    let userRating:Int
-    var avatarUrl:String
-    let email:String
-    let phoneNumber:String
+    public let id:String
+    public let userName:String
+    public let userRating:Int
+    public var avatarUrl:String
+    public let email:String
+    public let phoneNumber:String
     
     public init(id:String,userName:String,userRating:Int,avatarUrl:String,email:String,phoneNumber:String){
         self.id = id
@@ -26,5 +26,6 @@ public struct User :Codable{
         self.phoneNumber = phoneNumber
     }
 }
+
 
 
