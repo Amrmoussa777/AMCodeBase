@@ -14,9 +14,17 @@ public struct User :Codable{
     let userName:String
     let userRating:Int
     var avatarUrl:String
-//    var image:UIImage?
     let email:String
     let phoneNumber:String
+    
+    public init(id:String,userName:String,userRating:Int,avatarUrl:String,email:String,phoneNumber:String){
+        self.id = id
+        self.userName = userName
+        self.userRating = userRating
+        self.avatarUrl = avatarUrl
+        self.email = email
+        self.phoneNumber = phoneNumber
+    }
 }
 
 
