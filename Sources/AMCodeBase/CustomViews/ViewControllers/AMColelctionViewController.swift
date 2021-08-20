@@ -16,7 +16,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     open var AMCollectionView:UICollectionView!
     open var  layout = UICollectionViewFlowLayout()
     
-    open override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureView()
@@ -36,7 +36,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
 
     open func chanegCellSize(){
         // override this mehtod and change cellSize
-        self.cellSize = .init(width: AMCollectionView.frame.size.width, height: 100)
+        self.cellSize = .init(width: AMCollectionView.frame.width, height: 100)
     }
     open func UpadateItem(items:[Item]){
         self.items = items
