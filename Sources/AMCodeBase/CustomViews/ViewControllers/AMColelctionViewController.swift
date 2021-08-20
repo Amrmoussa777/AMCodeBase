@@ -19,7 +19,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     open var  layout:UICollectionViewFlowLayout!
     
     open override func viewDidLoad() {
-        super.collectionViewLayout = UICollectionViewFlowLayout()
+        
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureView()
