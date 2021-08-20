@@ -108,13 +108,3 @@ public protocol AMCelldelegate {
 
 
 
-@objc protocol e {
-    @objc optional func crea()
-}
-
-
-class x: e {
-    
-    
-    
-}
