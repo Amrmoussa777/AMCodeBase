@@ -13,7 +13,17 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     open  var cellSize:CGSize!
     open var items:[Item] = []
 
-    open var AMCollectionView:UICollectionView!
+    open var AMCollectionView:UICollectionView {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate =   self
+        collectionView.backgroundColor = .systemBackground
+        return collectionView
+    }
     open var layout = UICollectionViewFlowLayout()
     
     
@@ -28,7 +38,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     open func configureView(){
         // override this mehtod to  change collectionView configuration and don't forget to add super.configureView()
         
-        AMCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+//        AMCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         AMCollectionView.register(cellType.self, forCellWithReuseIdentifier:cellType.cellID)
         AMCollectionView.delegate = self
         AMCollectionView.dataSource = self
