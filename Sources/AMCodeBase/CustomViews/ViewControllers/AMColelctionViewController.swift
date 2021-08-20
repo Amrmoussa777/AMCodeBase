@@ -12,11 +12,14 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     
     open  var cellSize:CGSize!
     open var items:[Item] = []
+    
+    
 
     open var AMCollectionView:UICollectionView!
     open var  layout:UICollectionViewFlowLayout!
     
     open override func viewDidLoad() {
+        super.collectionViewLayout = UICollectionViewFlowLayout()
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureView()
@@ -26,6 +29,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     
     open func configureView(){
         // override this mehtod to  change collectionView configuration and don't forget to add super.configureView()
+        
         layout = UICollectionViewFlowLayout()
         AMCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         AMCollectionView.register(cellType.self, forCellWithReuseIdentifier:cellType.cellID)
@@ -60,7 +64,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
         return cell
     }
     
-    open override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
+    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
     
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
