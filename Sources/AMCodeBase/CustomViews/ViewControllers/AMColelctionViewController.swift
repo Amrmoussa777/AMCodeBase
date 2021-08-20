@@ -39,13 +39,19 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     
     open func chanegCellSize(){
         // override this mehtod and change cellSize
-        let padding:CGFloat = 5
-        self.cellSize = .init(width: AMCollectionView.frame.width - padding*2, height: 100)
+        self.cellSize = .init(width: AMCollectionView.frame.width, height: 100)
     }
     open func UpadateItem(items:[Item]){
         self.items = items
         self.AMCollectionView.reloadData()
         
+    }
+    
+    open override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // change cell size as layout of collection view will change so we need to recalcualte cellsize as it depends on
+        //  colection view frame which has changed .
+        chanegCellSize()
     }
     
   
@@ -80,8 +86,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     
     
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        print(AMCollectionView.frame.size.width)
-        return CGSize(width: AMCollectionView.frame.size.width, height: cellSize.height)
+        return CGSize(width: cellSize.width, height: cellSize.height)
     }
     
     open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {}
