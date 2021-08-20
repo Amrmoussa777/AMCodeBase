@@ -7,7 +7,7 @@
 
 import UIKit
 public typealias AMCollectionViewCell = UICollectionViewCell & AMCelldelegate
-open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable>: UICollectionViewController,
+open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable>: UIViewController,
         UICollectionViewDelegateFlowLayout{
     
     open  var cellSize:CGSize!
