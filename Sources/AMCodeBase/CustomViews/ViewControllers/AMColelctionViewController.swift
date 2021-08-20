@@ -38,7 +38,8 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     
     open func chanegCellSize(){
         // override this mehtod and change cellSize
-        self.cellSize = .init(width: AMCollectionView.frame.width, height: 100)
+        let padding:CGFloat = 5
+        self.cellSize = .init(width: AMCollectionView.frame.width - padding*2, height: 100)
     }
     open func UpadateItem(items:[Item]){
         self.items = items
@@ -75,14 +76,14 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
+    
+    
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: cellSize.width, height: cellSize.height)
     }
     
-    open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-
-    }
+    open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {}
     
 }
 

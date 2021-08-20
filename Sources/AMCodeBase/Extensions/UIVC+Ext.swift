@@ -13,7 +13,7 @@ public extension UIViewController{
     
   
     
-   @objc public func rightBarItemTapped(){
+   @objc  func rightBarItemTapped(){
         //handle accoutn icon tapped
         let accountVC = CurentUserProfile()
         accountVC.parentVC = self
