@@ -34,6 +34,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
         AMCollectionView.dataSource = self
         AMCollectionView.translatesAutoresizingMaskIntoConstraints = false
         AMCollectionView.backgroundColor = .systemBackground
+        
     }
     
     open func chanegCellSize(){
@@ -80,7 +81,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: cellSize.width, height: cellSize.height)
+        return CGSize(width: AMCollectionView.frame.size.width, height: cellSize.height)
     }
     
     open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {}
