@@ -14,6 +14,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     open var items:[Item] = []
 
     open var AMCollectionView:UICollectionView!
+    open var layout = UICollectionViewFlowLayout()
     
     
     open override func viewDidLoad() {
@@ -26,7 +27,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     
     open func configureView(){
         // override this mehtod to  change collectionView configuration and don't forget to add super.configureView()
-        let layout = AMCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
         AMCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         AMCollectionView.register(cellType.self, forCellWithReuseIdentifier:cellType.cellID)
         AMCollectionView.delegate = self
@@ -34,7 +35,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
         AMCollectionView.translatesAutoresizingMaskIntoConstraints = false
         AMCollectionView.backgroundColor = .systemBackground
     }
-
+    
     open func chanegCellSize(){
         // override this mehtod and change cellSize
         self.cellSize = .init(width: AMCollectionView.frame.width, height: 100)
