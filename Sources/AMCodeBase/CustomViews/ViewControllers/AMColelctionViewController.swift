@@ -80,9 +80,9 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
         return CGSize(width: cellSize.width, height: cellSize.height)
     }
     
-    open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
-    }
+//    open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        
+//    }
     
 }
 
