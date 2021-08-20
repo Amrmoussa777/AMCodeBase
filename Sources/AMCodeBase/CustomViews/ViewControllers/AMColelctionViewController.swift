@@ -7,8 +7,8 @@
 
 import UIKit
 public typealias AMCollectionViewCell = UICollectionViewCell & AMCelldelegate
-open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable>: UIViewController,
-        UICollectionViewDelegate, UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
+open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable>: UICollectionViewController,
+        UICollectionViewDelegateFlowLayout{
     
     open  var cellSize:CGSize!
     open var items:[Item] = []
@@ -50,17 +50,17 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
         AMCollectionView.register(newCell.self, forCellWithReuseIdentifier:newCell.cellID)
     }
     
-    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    open override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         items.count
     }
     
-    open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    open override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = AMCollectionView.dequeueReusableCell(withReuseIdentifier: cellType.cellID, for: indexPath) as! cellType
         cell.updateItem(item: items[indexPath.row])
         return cell
     }
     
-    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
+    open override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
     
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
