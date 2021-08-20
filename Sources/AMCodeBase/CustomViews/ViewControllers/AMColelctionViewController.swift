@@ -80,7 +80,7 @@ open class AMCollectionViewController<cellType:AMCollectionViewCell,Item:Codable
     
     
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+        print(AMCollectionView.frame.size.width)
         return CGSize(width: AMCollectionView.frame.size.width, height: cellSize.height)
     }
     
