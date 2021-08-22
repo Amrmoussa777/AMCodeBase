@@ -61,6 +61,7 @@ open class AMItemLable: UILabel {
         RoundCorners()
         backgroundColor = bgc
         text = "00:00"
+        textColor = .white
     }
     
    
