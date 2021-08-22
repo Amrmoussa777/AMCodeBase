@@ -61,8 +61,8 @@ public extension UIView {
     }
     
     
-    func AddStroke(color:UIColor){
-       layer.borderWidth = 2
+    func AddStroke(color:UIColor,strokeWidth:CGFloat = 2){
+       layer.borderWidth = strokeWidth
         layer.borderColor = color.cgColor
         
     }
