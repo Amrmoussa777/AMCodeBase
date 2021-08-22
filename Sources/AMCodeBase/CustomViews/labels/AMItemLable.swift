@@ -56,6 +56,14 @@ open class AMItemLable: UILabel {
     open func configureAsConversationMessage(){
         self.textColor = .tertiaryLabel
     }
+    
+    open func configureAsTiemrLabel(bgc:UIColor = .systemGreen){
+        RoundCorners()
+        backgroundColor = bgc
+        text = "00:00"
+    }
+    
+   
   
     
     
