@@ -49,6 +49,9 @@ public enum Images {
     static let registerImage = UIImage(named: "registerAvatar")
     static let createNewProductAvatar = UIImage(named: "createNewProductAvatar")
     
+    static let crossImage  = UIImage(systemName: "xmark")
+
+    
 }
 
 public enum AlertImages{
