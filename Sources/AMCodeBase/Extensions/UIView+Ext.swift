@@ -198,9 +198,9 @@ public extension UIView {
         
         desc.text = Message
         desc.textColor = .secondaryLabel
+        actionButton.addShadow()
         
         actionButton.addTarget(self, action: #selector(handleErrorAlert), for: .touchUpInside)
-        
         
         
         
