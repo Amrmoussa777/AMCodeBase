@@ -10,29 +10,29 @@
 import UIKit
 import SwiftUI
 
-class RatingUIView: UIView {
+open class RatingUIView: UIView {
     
     
-    var swiftUIView:RatingView!
+    open var swiftUIView:RatingView!
     private var model = RatingModel(rating: 1)
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         configure()
         
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(rating:Int){
+    public init(rating:Int){
         super.init(frame: .zero)
         
         addRating(rating: rating)
     }
     
-    private func configure(){
+    open  func configure(){
         swiftUIView = RatingView(rating: model)
         let hostingController = UIHostingController(rootView: swiftUIView)
         
@@ -54,7 +54,7 @@ class RatingUIView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func addRating(rating:Int = 1){
+   open  func addRating(rating:Int = 1){
         
         model.rawValue = rating
         
@@ -63,29 +63,29 @@ class RatingUIView: UIView {
     
 }
 
-class RatingModel: ObservableObject {
+open class RatingModel: ObservableObject {
     
-    @Published var rawValue: Int
+    @Published open var rawValue: Int
     
-    init(rating: Int) {
+    public init(rating: Int) {
         self.rawValue = rating
     }
 }
 
-struct RatingView: View {
-    @ObservedObject var rating: RatingModel
+public struct RatingView: View {
+    @ObservedObject public  var rating: RatingModel
 
     
-    var maximumRating = 5
+    public var maximumRating = 5
     // in case you neeed to change gary stars tp new image
-    var offImage: Image?
-    var onImage = Image(systemName: "star.fill").resizable()
+    public var offImage: Image?
+    public var onImage = Image(systemName: "star.fill").resizable()
+   
+    public var offColor = Color.gray
+    public var onColor = Color.orange
     
-    var offColor = Color.gray
-    var onColor = Color.orange
     
-    
-    var body: some View {
+    public  var body: some View {
         HStack(spacing:1) {
             ForEach(1..<maximumRating + 1) { number in
                 self.image(for: number)
@@ -120,8 +120,8 @@ struct RatingView: View {
 
 
 
-struct RatingView_Previews: PreviewProvider {
-    static var previews: some View {
+public struct RatingView_Previews: PreviewProvider {
+    public static var previews: some View {
         Group {
             // RatingView(rating: .constant(3))
             

@@ -9,25 +9,25 @@
 import UIKit
 
 
-class ProfileHeader: UIView {
+open class ProfileHeader: UIView {
     
-    let imageView = AvatarImageView()
-    let nameLabel = ProfileUserName()
-    let ratingView  = RatingUIView()
-    let phoneNumberLabel = AMItemLable(textAlignment: .center, NoOfLines: 1, size: 15)
+   public let imageView = AvatarImageView()
+   public let nameLabel = ProfileUserName()
+   public let ratingView  = RatingUIView()
+   public let phoneNumberLabel = AMItemLable(textAlignment: .center, NoOfLines: 1, size: 15)
     
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         configureLayout()
         
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureLayout(){
+    open func configureLayout(){
         addSubViews(imageView,nameLabel,ratingView,phoneNumberLabel)
         let padding:CGFloat = 10
         NSLayoutConstraint.activate([
@@ -60,7 +60,7 @@ class ProfileHeader: UIView {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func setData(user:User){
+    open func setData(user:User){
         imageView.downloadImage(fromURL: user.avatarUrl)
         nameLabel.setName(name: user.userName)
         phoneNumberLabel.setText(text: user.phoneNumber)

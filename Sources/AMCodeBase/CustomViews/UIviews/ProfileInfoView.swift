@@ -8,33 +8,33 @@
 
 import UIKit
 
-class ProfileInfoView: UIView {
-    let favouritesView = UIView()
-    let ordersView = UIView()
+open class ProfileInfoView: UIView {
+    public let favouritesView = UIView()
+    public let ordersView = UIView()
     
-    let favsLabelSubHeader = AMItemLable(textAlignment: .center)
-    let orderLabelSubHeader = AMItemLable(textAlignment: .center)
+    public let favsLabelSubHeader = AMItemLable(textAlignment: .center)
+    public let orderLabelSubHeader = AMItemLable(textAlignment: .center)
     
-    let orderCoutnLabel = AMItemLable(textAlignment: .center, NoOfLines: 1, size: 25)
-    let favCountLabel = AMItemLable(textAlignment: .center, NoOfLines: 1, size: 25)
+    public let orderCoutnLabel = AMItemLable(textAlignment: .center, NoOfLines: 1, size: 25)
+    public let favCountLabel = AMItemLable(textAlignment: .center, NoOfLines: 1, size: 25)
     
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configure(){
+    open func configure(){
         backgroundColor = .systemGray6
         configureSubView()
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private func configureSubView(){
+    open func configureSubView(){
         addSubViews(favouritesView,ordersView)
         favouritesView.translatesAutoresizingMaskIntoConstraints = false
         ordersView.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +59,7 @@ class ProfileInfoView: UIView {
         ConfidureSecondView()
         
     }
-    private func configureFisrtView(){
+    open func configureFisrtView(){
         favouritesView.addSubViews(favsLabelSubHeader,favCountLabel)
         favCountLabel.configureAsProfileHeadline()
         favsLabelSubHeader.textColor = .tertiaryLabel
@@ -81,7 +81,7 @@ class ProfileInfoView: UIView {
         
     }
     
-    private func ConfidureSecondView(){
+    open func ConfidureSecondView(){
         ordersView.addSubViews(orderLabelSubHeader,orderCoutnLabel)
         orderCoutnLabel.configureAsProfileHeadline()
         orderLabelSubHeader.textColor = .tertiaryLabel
@@ -101,7 +101,7 @@ class ProfileInfoView: UIView {
         orderCoutnLabel.text = "0"
     }
     
-    func setDate(favCount:Int,orderCount:Int){
+   open  func setDate(favCount:Int,orderCount:Int){
         favCountLabel.text = String(favCount)
         orderCoutnLabel.text = String(orderCount)
         

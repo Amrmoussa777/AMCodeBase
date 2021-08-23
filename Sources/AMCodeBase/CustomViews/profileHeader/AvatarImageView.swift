@@ -8,34 +8,34 @@
 
 import UIKit
 
-class AvatarImageView: UIImageView {
+open class AvatarImageView: UIImageView {
     
    // let cache = NetworkManager.shared.cache
-    let placeholderImage = Images.avatarPlaceholer
+   public let placeholderImage = Images.avatarPlaceholer
 
-    override init(frame: CGRect) {
+    override public  init(frame: CGRect) {
         super.init(frame: frame)
         
         configure()
     }
     
-    required init?(coder: NSCoder) {
+    required public  init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(){
+    public init(){
         super.init(frame: .zero)
         configure()
     }
     
-    private func configure() {
+    open func configure() {
         layer.cornerRadius = 10
         clipsToBounds = true
         image = placeholderImage
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func setImage(image:UIImage){
+    open func setImage(image:UIImage){
         self.image = image
     }
     

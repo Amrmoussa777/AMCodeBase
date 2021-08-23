@@ -9,20 +9,20 @@
 import UIKit
 
 
-class UserNameLabel: UILabel {
+open class UserNameLabel: UILabel {
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
     
-     func configure(){
+     open func configure(){
         textColor = .label
         numberOfLines = 1
         font = UIFont.systemFont(ofSize: 15, weight: .bold)
@@ -30,7 +30,7 @@ class UserNameLabel: UILabel {
         text = "username"
     }
     
-    func setName(name:String){
+    open func setName(name:String){
         self.text = name.capitalized
     }
     
@@ -38,19 +38,19 @@ class UserNameLabel: UILabel {
 }
 
 
-class ProfileUserName:UserNameLabel{
+open class ProfileUserName:UserNameLabel{
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
-    override func configure() {
+    override open  func configure() {
         super.configure()
         font = UIFont.systemFont(ofSize: 20, weight: .bold)
         textAlignment = .center
