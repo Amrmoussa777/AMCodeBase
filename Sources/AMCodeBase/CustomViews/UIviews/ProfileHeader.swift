@@ -36,9 +36,6 @@ open class ProfileHeader: UIView {
             imageView.heightAnchor.constraint(equalToConstant: 150),
             imageView.topAnchor.constraint(equalTo: topAnchor, constant: -75),
             
-          
-            
-            
             nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: padding),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
@@ -62,7 +59,7 @@ open class ProfileHeader: UIView {
     
     open func setData(user:User){
         imageView.downloadImage(fromURL: user.avatarUrl)
-        nameLabel.setName(name: user.userName)
+        nameLabel.setName(name: user.name)
         phoneNumberLabel.setText(text: user.phone)
         ratingView.addRating(rating: user.userRating)
     }
