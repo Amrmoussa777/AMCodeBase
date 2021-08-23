@@ -25,7 +25,7 @@ open class AMItemLable: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configure(_ size:CGFloat){
+    open func configure(_ size:CGFloat){
         
         
         
