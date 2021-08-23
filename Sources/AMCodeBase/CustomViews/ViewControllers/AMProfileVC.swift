@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ProfileVC: UIViewController {
+open class AMProfileVC: UIViewController {
     let contentView = UIView()
     let header = ProfileHeader()
     let infoView = ProfileInfoView()
@@ -26,7 +26,7 @@ open class ProfileVC: UIViewController {
     }
     
     
-    public override func viewDidAppear(_ animated: Bool) {
+     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         getUser()
     }
@@ -38,9 +38,7 @@ open class ProfileVC: UIViewController {
 
 
     
-    private func configureLayout(){
-       
-
+    open func configureLayout(){
         view.backgroundColor = .clear
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.backgroundColor = .systemBackground
@@ -70,14 +68,11 @@ open class ProfileVC: UIViewController {
             infoView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             infoView.heightAnchor.constraint(equalToConstant: 70),
         ])
-        
-        
-        
-        
+
     }
     
     
-    func getUser(){
+    open func  getUser(){
         AMNetworkManager.Shared.getCurrentUserInfo {[weak self] user in
             guard let self = self else {return}
             DispatchQueue.main.async {
@@ -85,15 +80,13 @@ open class ProfileVC: UIViewController {
             }
             
         }
-        
-       
         contentView.layer.cornerRadius = 10
     }
     
 
 }
 
-extension ProfileVC:UIGestureRecognizerDelegate{
+extension AMProfileVC:UIGestureRecognizerDelegate{
     
     private func configureDissmis(){
         let tap = UITapGestureRecognizer(target: self, action: #selector(dissmisVC))
@@ -108,7 +101,7 @@ extension ProfileVC:UIGestureRecognizerDelegate{
 
 
 
-class CurentUserProfile:ProfileVC{
+class CurentUserProfile:AMProfileVC{
   
     
     
