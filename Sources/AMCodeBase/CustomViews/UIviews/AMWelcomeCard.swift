@@ -42,7 +42,7 @@ open class AMWelcomeCard: UIView {
     
     open func setName(name:String,subText:String){
         let headerUserName =  "Hi, \(name) \n "
-        let headerAttribute = [ NSAttributedString.Key.foregroundColor: UIColor.systemGray ,
+        let headerAttribute = [ NSAttributedString.Key.foregroundColor: UIColor.darkGray ,
                                  NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30)  ]
         let headerString = NSAttributedString(string: headerUserName, attributes: headerAttribute)
         
