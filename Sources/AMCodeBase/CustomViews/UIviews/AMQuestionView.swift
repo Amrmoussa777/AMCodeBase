@@ -217,12 +217,26 @@ public enum ExamStatus{
 }
 
 public struct Question:Codable{
-    let id:String
-    let question:String
-    let correctAnswer:Int
+    public let id:String
+    public let question:String
+    public let correctAnswer:Int
+    
+    public init(id:String, question:String,correctAnswer:Int){
+        self.id = id
+        self.question = question
+        self.correctAnswer = correctAnswer
+        
+    }
+    
 }
 
 public struct Answer:Codable{
-    let id :String
-    let Answer:String
+    public let id :String
+    public let Answer:String
+    
+    public init(id:String,Answer:String){
+        self.id = id
+        self.Answer = Answer
+ 
+    }
 }
