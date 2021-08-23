@@ -76,6 +76,7 @@ open class AMQuestionView <cellType:AMCollectionViewCell,Item:Codable>: UIView,
         }
         quetionLabel.setText(text: questions[currentQuestion].question)
         correctAnswer = questions[currentQuestion].correctAnswer
+        #warning("get answers haere ")
         
         answersCV.reloadData()
     }
@@ -139,7 +140,7 @@ open class AMQuestionView <cellType:AMCollectionViewCell,Item:Codable>: UIView,
     
     open func getNewQuestion(){
         guard (currentQuestion < questions.count - 1) else {
-            showAlertView( Message:  "Wrong Answer ", buttonLabel: "Okey", actionButtonColor: .systemBlue)
+            showAlertView( Message:  "Last Question End of Exam ", buttonLabel: "Okey", actionButtonColor: .systemBlue)
             return
         }
        currentQuestion += 1
