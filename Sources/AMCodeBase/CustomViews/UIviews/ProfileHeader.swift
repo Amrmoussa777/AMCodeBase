@@ -63,7 +63,7 @@ open class ProfileHeader: UIView {
     open func setData(user:User){
         imageView.downloadImage(fromURL: user.avatarUrl)
         nameLabel.setName(name: user.userName)
-        phoneNumberLabel.setText(text: user.phoneNumber)
+        phoneNumberLabel.setText(text: user.phone)
         ratingView.addRating(rating: user.userRating)
     }
     
