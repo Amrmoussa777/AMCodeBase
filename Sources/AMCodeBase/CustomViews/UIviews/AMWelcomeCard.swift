@@ -34,13 +34,14 @@ open class AMWelcomeCard: UIView {
         label.textAlignment = .center
         RoundCorners()
         backgroundColor = .systemBackground
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         translatesAutoresizingMaskIntoConstraints = false
         
     }
     
     open func setName(name:String,subText:String){
-        let headerUserName =  "HI, \(name) \n"
+        let headerUserName =  "HI, \(name) \n \n"
         let headerAttribute = [ NSAttributedString.Key.foregroundColor: UIColor.black ,
                                  NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30)  ]
         let headerString = NSAttributedString(string: headerUserName, attributes: headerAttribute)
