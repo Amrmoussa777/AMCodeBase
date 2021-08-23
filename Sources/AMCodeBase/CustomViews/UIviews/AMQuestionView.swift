@@ -6,7 +6,7 @@
 //
 import UIKit
 
-open class QuestionView <cellType:AMCollectionViewCell,Item:Codable>: UIView,
+open class AMQuestionView <cellType:AMCollectionViewCell,Item:Codable>: UIView,
         UICollectionViewDelegate, UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
     let quetionLabel = AMItemLable(textAlignment: .center, NoOfLines: 0, size: 25)
     var answersCV : UICollectionView!
