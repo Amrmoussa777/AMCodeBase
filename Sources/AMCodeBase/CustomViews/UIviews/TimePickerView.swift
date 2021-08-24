@@ -47,14 +47,14 @@ open class AMTimePickerView: UIView {
             headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             headerLabel.heightAnchor.constraint(equalToConstant: 50),
             
-            timePicker.leadingAnchor.constraint(equalTo: leadingAnchor,constant: padding),
-            timePicker.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: padding),
-            timePicker.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -padding),
-            timePicker.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),
+            timePicker.centerXAnchor.constraint(equalTo: centerXAnchor),
+            timePicker.centerYAnchor.constraint(equalTo: centerYAnchor)
+            
             
         ])
         headerLabel.setText(text: "choose study reminder :")
         headerLabel.configureAsProfileHeadline()
+        headerLabel.textColor  = .tertiaryLabel
         
     }
     
