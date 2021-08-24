@@ -28,6 +28,7 @@ open class AMTimePickerView: UIView{
         timePicker?.locale = .current
         timePicker?.addTarget(self, action: #selector(handleDateSelection), for: .valueChanged)
         timePicker?.tintColor = .systemGreen
+        timePicker?.inputAccessoryView?.tintColor = .systemGreen
     }
     
     open override func layoutSubviews() {
@@ -54,7 +55,7 @@ open class AMTimePickerView: UIView{
             
             timePicker.centerXAnchor.constraint(equalTo: centerXAnchor, constant: padding),
             timePicker.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: padding),
-            timePicker.widthAnchor.constraint(equalToConstant: 200),
+            timePicker.widthAnchor.constraint(equalToConstant: 150),
             timePicker.heightAnchor.constraint(equalToConstant: 50),
         ])
         headerLabel.setText(text: "اختر وقت تذكير بالمذاكرة")
