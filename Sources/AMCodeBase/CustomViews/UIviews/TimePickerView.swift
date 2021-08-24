@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class TimePickerView: UIView {
+open class AMTimePickerView: UIView {
     
     public let headerLabel = AMItemLable(textAlignment: .left, NoOfLines: 1, size: 20)
     public let timeLabel = AMItemLable(textAlignment: .left, NoOfLines: 1, size: 20)
