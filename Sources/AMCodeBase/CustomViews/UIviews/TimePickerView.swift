@@ -24,7 +24,7 @@ open class AMTimePickerView: UIView{
         timePicker = UIDatePicker()
         timePicker?.date = Date()
         timePicker?.datePickerMode = .time
-        if #available(iOS 13.4, *) {timePicker?.preferredDatePickerStyle = .compact} else {}
+        if #available(iOS 13.4, *) {timePicker?.preferredDatePickerStyle = .wheels} else {}
         timePicker?.locale = .current
         timePicker?.addTarget(self, action: #selector(handleDateSelection), for: .valueChanged)
         timePicker?.tintColor = .systemGreen
