@@ -11,7 +11,7 @@ import UIKit
                 
 open class AMTextFeild:UITextField{
     
-    lazy var originalPassword = ""
+    lazy open var originalPassword = ""
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
