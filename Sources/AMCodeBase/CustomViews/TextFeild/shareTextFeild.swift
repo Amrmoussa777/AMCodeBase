@@ -9,19 +9,19 @@
 import UIKit
 
                 
-class AMTextFeild:UITextField{
+open class AMTextFeild:UITextField{
     
     lazy var originalPassword = ""
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(placeHolder:String,placeholderImage:UIImage) {
+    public init(placeHolder:String,placeholderImage:UIImage) {
         super.init(frame: .zero)
         configure(placeHolder,placeholderImage)
         
@@ -52,22 +52,14 @@ class AMTextFeild:UITextField{
         
     }
     
-    
-   
-    
-    
-    
-}
-
-extension AMTextFeild{
-    func configurePasswordView(){
+    open func configurePasswordView(){
         tintColor = UIColor.clear
         
         addTarget(self, action: #selector(updateTextFeild), for: .editingChanged)
         
     }
     
-    override func caretRect(for position: UITextPosition) -> CGRect {
+    open override func caretRect(for position: UITextPosition) -> CGRect {
         return CGRect.zero
     }
     
@@ -90,4 +82,9 @@ extension AMTextFeild{
        
         
     }
+   
+    
+    
+    
 }
+

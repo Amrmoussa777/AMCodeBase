@@ -13,7 +13,7 @@ open class AMNetworkManagerBase {
     open var baseUrl :String = ""
     open var currentRootVC:UIViewController?
     
-        open var userAuthCompletionHandler:((Bool) -> ())?
+  open  var userAuthCompletionHandler:((Bool) -> ())?
     
     public init(baseUrl:String = ""){
         self.baseUrl = baseUrl
@@ -117,6 +117,7 @@ extension AMNetworkManagerBase:loginStatusProtocol{
         case .tappedRegisterButton:
             currentRootVC?.showRegisterVC(delegateHandler: self)
         case .registered:
+            print("registered")
             self.userAuthCompletionHandler?(true)
         // handle action veforesign up
         }
@@ -131,3 +132,4 @@ open class AMNetworkManager: AMNetworkManagerBase {
 }
 
    
+
