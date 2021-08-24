@@ -63,15 +63,15 @@ public extension UIViewController{
     }
     
     func presentLoginVC(delegateHandler:loginStatusProtocol){
-        let loginVC  = LoginVC()
-        loginVC.delegate = delegateHandler
-        present(loginVC, animated: true)
+//        let loginVC  = LoginVC()
+//        loginVC.delegate = delegateHandler
+//        present(loginVC, animated: true)
         
     }
     func showRegisterVC(delegateHandler:loginStatusProtocol){
-        let registerVC = RegisterVC.shared
-           registerVC.delegate = delegateHandler
-        present(registerVC, animated: true)
+//        let registerVC = RegisterVC.shared
+//           registerVC.delegate = delegateHandler
+//        present(registerVC, animated: true)
     }
    
    
