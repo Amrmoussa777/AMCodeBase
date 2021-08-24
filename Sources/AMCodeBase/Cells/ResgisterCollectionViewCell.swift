@@ -10,10 +10,10 @@ import UIKit
 
 open class ResgisterCollectionViewCell: UICollectionViewCell {
     
-    static let cellID = "RegisterCellID"
+   public  static let cellID = "RegisterCellID"
     
-    let infoLabel = AMItemLable(textAlignment: .center, NoOfLines: 0, size: 15)
-    override init(frame: CGRect) {
+   public  let infoLabel = AMItemLable(textAlignment: .center, NoOfLines: 0, size: 15)
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
@@ -22,7 +22,7 @@ open class ResgisterCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(view:UIView,constrains:NSLayoutConstraint) {
+    public init(view:UIView,constrains:NSLayoutConstraint) {
         super.init(frame: .zero)
         //configure(view, constrains: constrains)
         
@@ -35,7 +35,7 @@ open class ResgisterCollectionViewCell: UICollectionViewCell {
        
     }
     
-    private func configure(){
+    open func configure(){
         contentView.backgroundColor = .systemBackground
         
         RoundCorners()
@@ -59,7 +59,7 @@ open class ResgisterCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func addContentViews(_ views:[UIView],constrains:[NSLayoutConstraint],topMessage:String){
+   open  func addContentViews(_ views:[UIView],constrains:[NSLayoutConstraint],topMessage:String){
         
         infoLabel.text = topMessage
         
