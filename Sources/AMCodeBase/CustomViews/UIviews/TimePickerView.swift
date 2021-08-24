@@ -27,6 +27,7 @@ open class AMTimePickerView: UIView{
         if #available(iOS 13.4, *) {timePicker?.preferredDatePickerStyle = .compact} else {}
         timePicker?.locale = .current
         timePicker?.addTarget(self, action: #selector(handleDateSelection), for: .valueChanged)
+        timePicker?.addTarget(self, action: #selector(handleDateTapped), for: .touchUpInside)
         timePicker?.tintColor = .systemGreen
     }
     
@@ -47,8 +48,12 @@ open class AMTimePickerView: UIView{
             headerLabel.topAnchor.constraint(equalTo: topAnchor, constant: padding),
             headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             headerLabel.heightAnchor.constraint(equalToConstant: 50),
+            
+            timePicker.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            timePicker.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: padding),
+            timePicker.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            timePicker.heightAnchor.constraint(equalToConstant: 50),
         ])
-        updateDatePickerConstraints()
         headerLabel.setText(text: "اختر وقت تذكير بالمذاكرة")
         headerLabel.configureAsProfileHeadline()
     }
@@ -72,6 +77,11 @@ open class AMTimePickerView: UIView{
     
     @objc open func handleDateSelection(){
         print(timePicker?.date ?? "N/a")
+    }
+    
+    
+    @objc open func handleDateTapped(){
+        updateDatePickerConstraints()
     }
     
     
