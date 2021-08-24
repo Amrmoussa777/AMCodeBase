@@ -95,7 +95,7 @@ open class AMNetworkManagerBase {
     
    
     
-    private func authenticateUser(completion:@escaping(Bool)->()){
+    open func authenticateUser(completion:@escaping(Bool)->()){
         self.userAuthCompletionHandler = completion
         currentRootVC?.presentLoginVC(delegateHandler: self)
     }
@@ -117,7 +117,6 @@ extension AMNetworkManagerBase:loginStatusProtocol{
         case .tappedRegisterButton:
             currentRootVC?.showRegisterVC(delegateHandler: self)
         case .registered:
-            print("registered")
             self.userAuthCompletionHandler?(true)
         // handle action veforesign up
         }

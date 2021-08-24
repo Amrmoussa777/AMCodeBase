@@ -12,6 +12,7 @@ open class AMTimePickerView: UIView{
     public let headerLabel = AMItemLable(textAlignment: .center, NoOfLines: 1, size: 20)
     public let timeLabel = AMItemLable(textAlignment: .left, NoOfLines: 1, size: 20)
     open var timePicker:UIDatePicker?
+    open var defaultDate:Date?
     open var datePickerConstraints = [NSLayoutConstraint]()
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,7 +23,7 @@ open class AMTimePickerView: UIView{
     
     open func configurePicker(){
         timePicker = UIDatePicker()
-        timePicker?.date = Date()
+        timePicker?.date = defaultDate ?? Date()
         timePicker?.datePickerMode = .time
         if #available(iOS 13.4, *) {timePicker?.preferredDatePickerStyle = .wheels} else {}
         timePicker?.locale = .current
