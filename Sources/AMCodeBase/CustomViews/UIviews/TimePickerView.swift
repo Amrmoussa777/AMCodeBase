@@ -50,9 +50,9 @@ open class AMTimePickerView: UIView{
             headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             headerLabel.heightAnchor.constraint(equalToConstant: 50),
             
-            timePicker.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            timePicker.centerXAnchor.constraint(equalTo: centerXAnchor, constant: padding),
             timePicker.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: padding),
-            timePicker.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            timePicker.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.25),
             timePicker.heightAnchor.constraint(equalToConstant: 50),
         ])
         headerLabel.setText(text: "اختر وقت تذكير بالمذاكرة")
