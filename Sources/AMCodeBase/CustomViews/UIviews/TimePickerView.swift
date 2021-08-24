@@ -7,9 +7,9 @@
 
 import UIKit
 
-open class AMTimePickerView: UIView {
+open class AMTimePickerView: UIView{
     
-    public let headerLabel = AMItemLable(textAlignment: .left, NoOfLines: 1, size: 20)
+    public let headerLabel = AMItemLable(textAlignment: .center, NoOfLines: 1, size: 20)
     public let timeLabel = AMItemLable(textAlignment: .left, NoOfLines: 1, size: 20)
     open var timePicker:UIDatePicker?
     
@@ -49,13 +49,10 @@ open class AMTimePickerView: UIView {
             
             timePicker.centerXAnchor.constraint(equalTo: centerXAnchor),
             timePicker.centerYAnchor.constraint(equalTo: centerYAnchor)
-            
-            
         ])
-        headerLabel.setText(text: "choose study reminder :")
-        headerLabel.configureAsProfileHeadline()
-        headerLabel.textColor  = .tertiaryLabel
         
+        headerLabel.setText(text: "choose study reminder")
+        headerLabel.configureAsProfileHeadline()
     }
     
     
