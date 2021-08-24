@@ -12,7 +12,7 @@ open class AMTimePickerView: UIView{
     public let headerLabel = AMItemLable(textAlignment: .center, NoOfLines: 1, size: 20)
     public let timeLabel = AMItemLable(textAlignment: .left, NoOfLines: 1, size: 20)
     open var timePicker:UIDatePicker?
-    
+    open var datePickerConstraints = [NSLayoutConstraint]()
     override public init(frame: CGRect) {
         super.init(frame: frame)
         configurePicker()
@@ -27,6 +27,7 @@ open class AMTimePickerView: UIView{
         if #available(iOS 13.4, *) {timePicker?.preferredDatePickerStyle = .compact} else {}
         timePicker?.locale = .current
         timePicker?.addTarget(self, action: #selector(handleDateSelection), for: .valueChanged)
+        timePicker?.tintColor = .systemGreen
     }
     
     required public init?(coder: NSCoder) {
@@ -46,15 +47,28 @@ open class AMTimePickerView: UIView{
             headerLabel.topAnchor.constraint(equalTo: topAnchor, constant: padding),
             headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             headerLabel.heightAnchor.constraint(equalToConstant: 50),
-            
-            timePicker.centerXAnchor.constraint(equalTo: centerXAnchor),
-            timePicker.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
-        
-        headerLabel.setText(text: "choose study reminder")
+        updateDatePickerConstraints()
+        headerLabel.setText(text: "اختر وقت تذكير بالمذاكرة")
         headerLabel.configureAsProfileHeadline()
     }
     
+    
+    
+    private func updateDatePickerConstraints() {
+        guard let datePicker = timePicker else { return }
+        
+        // Remove any previously set constraints.
+        self.removeConstraints(datePickerConstraints)
+        datePickerConstraints.removeAll()
+        
+        datePickerConstraints.append(datePicker.centerYAnchor.constraint(equalTo: centerYAnchor))
+        datePickerConstraints.append(datePicker.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8))
+        datePickerConstraints.append(datePicker.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8))
+        
+        // Activate all constraints.
+        NSLayoutConstraint.activate(datePickerConstraints)
+    }
     
     @objc open func handleDateSelection(){
         print(timePicker?.date ?? "N/a")
