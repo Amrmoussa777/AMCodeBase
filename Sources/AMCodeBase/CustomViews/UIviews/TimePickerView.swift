@@ -29,7 +29,7 @@ open class AMTimePickerView: UIView{
         timePicker?.addTarget(self, action: #selector(handleDateSelection), for: .valueChanged)
         timePicker?.tintColor = .systemGreen
 //        timePicker?.setValue(UIColor.systemGreen, forKey: "textColor")
-        timeLabel.textColor = .systemGreen
+        timePicker?.setValue(UIColor.systemGreen, forKey: "textColor")
     }
     
     open override func layoutSubviews() {
