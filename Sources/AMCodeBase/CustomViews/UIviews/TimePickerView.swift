@@ -27,7 +27,6 @@ open class AMTimePickerView: UIView{
         if #available(iOS 13.4, *) {timePicker?.preferredDatePickerStyle = .compact} else {}
         timePicker?.locale = .current
         timePicker?.addTarget(self, action: #selector(handleDateSelection), for: .valueChanged)
-        timePicker?.addTarget(self, action: #selector(handleDateTapped), for: .touchUpInside)
         timePicker?.tintColor = .systemGreen
     }
     
@@ -85,9 +84,9 @@ open class AMTimePickerView: UIView{
     }
     
     
-    @objc open func handleDateTapped(){
-        updateDatePickerConstraints()
-    }
+//    @objc open func handleDateTapped(){
+//        updateDatePickerConstraints()
+//    }
     
     
 }
