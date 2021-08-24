@@ -31,7 +31,10 @@ open class AMTimePickerView: UIView{
         timePicker?.tintColor = .systemGreen
     }
     
-    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        layoutIfNeeded()
+    }
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -58,6 +61,7 @@ open class AMTimePickerView: UIView{
         headerLabel.setText(text: "اختر وقت تذكير بالمذاكرة")
         headerLabel.configureAsProfileHeadline()
     }
+    
     
     
     
