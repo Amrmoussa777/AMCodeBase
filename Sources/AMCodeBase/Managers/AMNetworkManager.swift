@@ -13,7 +13,7 @@ open class AMNetworkManagerBase {
     open var baseUrl :String = ""
     open var currentRootVC:UIViewController?
     
-    var userAuthCompletionHandler:((Bool) -> ())?
+        open var userAuthCompletionHandler:((Bool) -> ())?
     
     public init(baseUrl:String = ""){
         self.baseUrl = baseUrl
