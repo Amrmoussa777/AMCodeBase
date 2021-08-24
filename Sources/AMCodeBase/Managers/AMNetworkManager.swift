@@ -7,7 +7,7 @@
 //
 
 import UIKit
-open class AMNetworkManagerBase {
+open class AMNetworkManagerBase :loginStatusProtocol{
     
     private var cashe:[NSString:UIImage] = [:]
     open var baseUrl :String = ""
@@ -100,20 +100,10 @@ open class AMNetworkManagerBase {
         currentRootVC?.presentLoginVC(delegateHandler: self)
     }
     
-    
-    
-  
-    
-    
-    
-}//c
-
-extension AMNetworkManagerBase:loginStatusProtocol{
-    
     open func userLoginStatusChanged(ststus: userLoginStatus) {
         switch (ststus) {
         case .loggedin:
-            self.userAuthCompletionHandler?(true) 
+            self.userAuthCompletionHandler?(true)
         case .tappedRegisterButton:
             currentRootVC?.showRegisterVC(delegateHandler: self)
         case .registered:
@@ -122,7 +112,14 @@ extension AMNetworkManagerBase:loginStatusProtocol{
         // handle action veforesign up
         }
     }
-}
+    
+  
+    
+    
+    
+}//c
+
+
 
 
 
