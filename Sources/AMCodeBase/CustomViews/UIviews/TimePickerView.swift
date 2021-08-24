@@ -31,6 +31,7 @@ open class AMTimePickerView: UIView{
         timePicker?.tintColor = .systemGreen
     }
     
+    
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -76,7 +77,7 @@ open class AMTimePickerView: UIView{
     }
     
     @objc open func handleDateSelection(){
-        print(timePicker?.date ?? "N/a")
+        print(timePicker?.date.timeIntervalSince1970 ?? "N/a")
     }
     
     
