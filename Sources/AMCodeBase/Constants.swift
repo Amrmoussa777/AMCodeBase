@@ -77,6 +77,7 @@ public enum userLoginStatus {
     case loggedin
     case tappedRegisterButton
     case registered
+    case tappLogin
 }
 
 

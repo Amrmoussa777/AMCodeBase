@@ -104,6 +104,8 @@ open class AMNetworkManagerBase :loginStatusProtocol{
         switch (ststus) {
         case .loggedin:
             self.userAuthCompletionHandler?(true)
+        case .tappLogin:
+            currentRootVC?.presentLoginVC(delegateHandler: self)
         case .tappedRegisterButton:
             currentRootVC?.showRegisterVC(delegateHandler: self)
         case .registered:
