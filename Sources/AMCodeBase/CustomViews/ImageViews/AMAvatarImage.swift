@@ -20,12 +20,12 @@ open class AMAvatarImage: UIImageView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureImageView(newTintColor:UIColor){
+    private func configureImageView(newTintColor:UIColor = .orange){
         layer.cornerRadius = 10
         clipsToBounds = true
         image = ImgPlaceHolder
         contentMode = .center
-        tintColor = .orange
+        tintColor = newTintColor
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
