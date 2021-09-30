@@ -29,7 +29,7 @@ open class AMTextFeild:UITextField{
     }
     
     
-    private func configure(_ plaHolder:String,_ placeHolderImage:UIImage){
+    open func configure(_ plaHolder:String,_ placeHolderImage:UIImage){
         
         let attachment = NSTextAttachment()
         attachment.image = placeHolderImage.withTintColor(.systemGray2)
