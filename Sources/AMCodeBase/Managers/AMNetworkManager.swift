@@ -115,7 +115,10 @@ open class AMNetworkManagerBase :loginStatusProtocol{
         }
     }
     
-  
+    open func memoryWarningReceived(){
+        NSLog("amrLogg:\(cashe.count)")
+        cashe.removeAll()
+    }
     
     
     
