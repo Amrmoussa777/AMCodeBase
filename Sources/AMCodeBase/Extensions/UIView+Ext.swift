@@ -107,6 +107,12 @@ public extension UIView {
         containerView.backgroundColor = .clear
         containerView.alpha = 0
         
+        NSLayoutConstraint.activate([
+            containerView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            containerView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+        
+        
         UIView.animate(withDuration: 0.25) { containerView.alpha = 0.8 }
         
         let activityIndicator = UIActivityIndicatorView(style: .large)
@@ -115,10 +121,13 @@ public extension UIView {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.color = color
         
+       
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
         ])
+        
+        
         
         activityIndicator.startAnimating()
         return containerView
