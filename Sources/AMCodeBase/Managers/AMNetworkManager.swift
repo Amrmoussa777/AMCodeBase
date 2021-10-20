@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 open class AMNetworkManagerBase :loginStatusProtocol{
     
     private var cashe:[NSString:UIImage] = [:]
@@ -48,6 +49,8 @@ open class AMNetworkManagerBase :loginStatusProtocol{
         
     }
     
+    
+  
     
     open func getItems<Item:Decodable>(subUrl:String , completed: @escaping (Result<[Item], networkError>) -> Void) {
         let endpoint = baseUrl + subUrl

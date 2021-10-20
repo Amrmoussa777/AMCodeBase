@@ -21,6 +21,19 @@ public extension UIImageView {
      }
        
     }
+    
+    func downloadImageWithAnimation(fromURL url: String) {
+        let loading = showImageLoadingLoadingView()
+         AMNetworkManager.Shared.downloadImage(from: url) { [weak self] (image) in
+         guard let self = self else { return }
+         DispatchQueue.main.async {
+            loading.removeFromSuperview()
+            self.image = image
+            self.contentMode = .scaleAspectFill
+         }
+     }
+       
+    }
 }
     
 

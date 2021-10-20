@@ -99,6 +99,30 @@ public extension UIView {
         activityIndicator.startAnimating()
         return containerView
     }
+    
+    func showImageLoadingLoadingView() -> UIView {
+        let containerView = UIView(frame: bounds)
+        addSubview(containerView)
+        
+        containerView.backgroundColor = .clear
+        containerView.alpha = 0
+        
+        UIView.animate(withDuration: 0.25) { containerView.alpha = 0.8 }
+        
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        containerView.addSubview(activityIndicator)
+        
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
+        ])
+        
+        activityIndicator.startAnimating()
+        return containerView
+    }
+
    
     
     func showEmptyState(img:UIImage,message:String) -> EmptyStateView{
