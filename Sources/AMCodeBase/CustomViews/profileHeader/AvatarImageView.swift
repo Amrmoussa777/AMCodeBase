@@ -31,7 +31,7 @@ open class AvatarImageView: UIImageView {
     open func configure() {
         layer.cornerRadius = 10
         clipsToBounds = true
-        image = placeholderImage
+//        image = placeholderImage
         translatesAutoresizingMaskIntoConstraints = false
     }
     
