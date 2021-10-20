@@ -22,8 +22,8 @@ public extension UIImageView {
        
     }
     
-    func downloadImageWithAnimation(fromURL url: String) {
-        let loading = showImageLoadingLoadingView()
+    func downloadImageWithAnimation(fromURL url: String,withColor:UIColor) {
+        let loading = showImageLoadingLoadingView(color: withColor)
          AMNetworkManager.Shared.downloadImage(from: url) { [weak self] (image) in
          guard let self = self else { return }
          DispatchQueue.main.async {

@@ -100,7 +100,7 @@ public extension UIView {
         return containerView
     }
     
-    func showImageLoadingLoadingView() -> UIView {
+    func showImageLoadingLoadingView(color:UIColor) -> UIView {
         let containerView = UIView(frame: bounds)
         addSubview(containerView)
         
@@ -113,6 +113,7 @@ public extension UIView {
         containerView.addSubview(activityIndicator)
         
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.color = color
         
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
