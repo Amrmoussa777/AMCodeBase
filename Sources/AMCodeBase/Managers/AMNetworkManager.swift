@@ -40,7 +40,7 @@ open class AMNetworkManagerBase :loginStatusProtocol{
             
             
             guard  let image = UIImage(data: data) else {return}
-            self.cashe[urlKey]  = image
+//            self.cashe[urlKey]  = image
             completion(image)
         }
         
