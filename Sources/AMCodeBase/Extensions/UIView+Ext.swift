@@ -107,10 +107,7 @@ public extension UIView {
         containerView.backgroundColor = .clear
         containerView.alpha = 0
         
-        NSLayoutConstraint.activate([
-            containerView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            containerView.centerYAnchor.constraint(equalTo: centerYAnchor)
-        ])
+        containerView.pinToSuperViewEdges(in: self)
         
         
         UIView.animate(withDuration: 0.25) { containerView.alpha = 0.8 }
