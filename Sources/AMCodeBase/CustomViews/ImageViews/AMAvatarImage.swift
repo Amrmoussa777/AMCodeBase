@@ -23,7 +23,7 @@ open class AMAvatarImage: UIImageView {
     private func configureImageView(newTintColor:UIColor = .orange){
         layer.cornerRadius = 10
         clipsToBounds = true
-        image = ImgPlaceHolder
+//        image = ImgPlaceHolder
         contentMode = .center
         tintColor = newTintColor
         translatesAutoresizingMaskIntoConstraints = false
