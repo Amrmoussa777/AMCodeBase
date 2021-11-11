@@ -26,10 +26,6 @@ open class AMItemLable: UILabel {
     }
     
     open func configure(_ size:CGFloat){
-        
-        
-        
-        text = "Product description"
         textColor = .label
         font = UIFont.systemFont(ofSize: size, weight: .regular)
         contentMode = .scaleAspectFit

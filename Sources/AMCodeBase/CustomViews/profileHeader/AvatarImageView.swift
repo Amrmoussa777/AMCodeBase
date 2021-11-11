@@ -11,11 +11,10 @@ import UIKit
 open class AvatarImageView: UIImageView {
     
    // let cache = NetworkManager.shared.cache
-   public let placeholderImage = Images.avatarPlaceholer
+
 
     override public  init(frame: CGRect) {
         super.init(frame: frame)
-        
         configure()
     }
     
@@ -31,7 +30,6 @@ open class AvatarImageView: UIImageView {
     open func configure() {
         layer.cornerRadius = 10
         clipsToBounds = true
-        image = placeholderImage
         translatesAutoresizingMaskIntoConstraints = false
     }
     
