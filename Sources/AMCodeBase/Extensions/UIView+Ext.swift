@@ -77,6 +77,12 @@ public extension UIView {
         layer.masksToBounds = true
     }
     
+    func roundShapeWithHeight(){
+        layer.cornerRadius = frame.height / 2
+        clipsToBounds = true
+        layer.masksToBounds = true
+    }
+    
     func showLoadingView() -> UIView {
         let containerView = UIView(frame: bounds)
         addSubview(containerView)
