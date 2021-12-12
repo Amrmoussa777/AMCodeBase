@@ -19,13 +19,13 @@ class AMCView<cellType:AMCollectionViewCell,Item:Codable>: UIView,
     open var AMCollectionView:UICollectionView!
     open var layout = UICollectionViewFlowLayout()
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
         chanegCellSize()
     }
     
-    required init?(coder: NSCoder) {
+    required public  init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
