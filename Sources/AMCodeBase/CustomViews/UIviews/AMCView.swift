@@ -37,7 +37,8 @@ open class AMCView<cellType:AMCollectionViewCell,Item:Codable>: UIView,
         AMCollectionView.dataSource = self
         AMCollectionView.translatesAutoresizingMaskIntoConstraints = false
         AMCollectionView.backgroundColor = .systemBackground
-        
+        addSubViews(AMCollectionView)
+        AMCollectionView.pinToSuperViewSafeArea(in: self)
     }
     
     open func chanegCellSize(){
