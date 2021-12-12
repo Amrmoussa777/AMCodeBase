@@ -31,6 +31,7 @@ open class AMCView<cellType:AMCollectionViewCell,Item:Codable>: UIView,
     
     open func configureView(){
         // override this mehtod to  change collectionView configuration and don't forget to add super.configureView()
+        translatesAutoresizingMaskIntoConstraints = false
         AMCollectionView = UICollectionView(frame: bounds, collectionViewLayout: layout)
         AMCollectionView.register(cellType.self, forCellWithReuseIdentifier:cellType.cellID)
         AMCollectionView.delegate = self
