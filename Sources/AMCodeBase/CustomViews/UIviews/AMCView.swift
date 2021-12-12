@@ -9,7 +9,7 @@
 import UIKit
 
 
-class AMCView<cellType:AMCollectionViewCell,Item:Codable>: UIView,
+open class AMCView<cellType:AMCollectionViewCell,Item:Codable>: UIView,
                 UICollectionViewDelegate, UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout {
     
     
@@ -52,7 +52,7 @@ class AMCView<cellType:AMCollectionViewCell,Item:Codable>: UIView,
     }
     
    
-    override func layoutSubviews() {
+    open override func layoutSubviews() {
         // change cell size as layout of collection view will change so we need to recalcualte cellsize as it depends on
         //  colection view frame which has changed .
         super.layoutSubviews()
