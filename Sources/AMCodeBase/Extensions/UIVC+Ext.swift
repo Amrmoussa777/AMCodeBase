@@ -113,23 +113,18 @@ public extension UIViewController{
         toastLabel.textColor = UIColor.white
         toastLabel.font = font
         toastLabel.textAlignment = .center
+        toastLabel.numberOfLines = 0
         
-        let fullString = NSMutableAttributedString(string: " ")
-        let imgAttachment = NSTextAttachment()
-        imgAttachment.bounds = CGRect(x: -5, y: -3 , width: 20, height: 20)
-        imgAttachment.image = icon
-        let image1String = NSAttributedString(attachment: imgAttachment)
-        fullString.append(image1String)
-        fullString.append(NSAttributedString(string: "  " +  message))
+      
 
-        toastLabel.attributedText = fullString
+        toastLabel.text = "\n" + message
        
         
         self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 2.0, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseOut, animations: {
              toastLabel.frame.origin.y = 0
         }, completion: {(isCompleted) in
-            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                 DispatchQueue.main.async {
                     toastLabel.removeFromSuperview()
                 }
