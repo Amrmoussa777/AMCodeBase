@@ -104,7 +104,7 @@ public extension UIViewController{
             })
         }
     
-    func showSlidingToast(message : String, font: UIFont? = UIFont.systemFont(ofSize: 19)
+    func showSlidingToast(message : String, font: UIFont? = UIFont.systemFont(ofSize: 15, weight: .semibold)
                           ,icon:UIImage? ,bGC:UIColor = .red){
         let toastLabel = UILabel(frame: CGRect(x: 0, y: -100, width: self.view.frame.size.width , height: 100))
     
@@ -114,9 +114,6 @@ public extension UIViewController{
         toastLabel.font = font
         toastLabel.textAlignment = .center
         toastLabel.numberOfLines = 0
-        
-      
-
         toastLabel.text = "\n" + message
        
         
