@@ -123,7 +123,11 @@ public extension UIViewController{
         }, completion: {(isCompleted) in
             Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                 DispatchQueue.main.async {
-                    toastLabel.removeFromSuperview()
+                    UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseOut) {
+                        toastLabel.frame.origin.y = -100
+                    } completion: { (isCompleted) in
+                        toastLabel.removeFromSuperview()
+                    }
                 }
             }
         })
