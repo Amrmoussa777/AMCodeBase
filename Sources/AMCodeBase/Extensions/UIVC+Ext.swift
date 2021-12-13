@@ -77,6 +77,7 @@ public extension UIViewController{
     func showToast(message : String, font: UIFont? = UIFont.systemFont(ofSize: 19)
                    ,icon:UIImage? = Images.checkMarkImage) {
             let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 100, y: self.view.frame.size.height-100, width: self.view.frame.size.width - 100, height: 50))
+        
             
             toastLabel.roundShapeWithHeight()
             toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.4)
@@ -102,6 +103,40 @@ public extension UIViewController{
                 toastLabel.removeFromSuperview()
             })
         }
+    
+    func showSlidingToast(message : String, font: UIFont? = UIFont.systemFont(ofSize: 19)
+                          ,icon:UIImage? ,bGC:UIColor = .red){
+        let toastLabel = UILabel(frame: CGRect(x: 0, y: -100, width: self.view.frame.size.width , height: 100))
+    
+        
+        toastLabel.backgroundColor = bGC
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center
+        
+        let fullString = NSMutableAttributedString(string: " ")
+        let imgAttachment = NSTextAttachment()
+        imgAttachment.bounds = CGRect(x: -5, y: -3 , width: 20, height: 20)
+        imgAttachment.image = icon
+        let image1String = NSAttributedString(attachment: imgAttachment)
+        fullString.append(image1String)
+        fullString.append(NSAttributedString(string: "  " +  message))
+
+        toastLabel.attributedText = fullString
+       
+        
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 2.0, delay: 0, options: .curveEaseOut, animations: {
+             toastLabel.frame.origin.y = 0
+        }, completion: {(isCompleted) in
+            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+                DispatchQueue.main.async {
+                    toastLabel.removeFromSuperview()
+                }
+            }
+        })
+        
+    }
     
     
 
