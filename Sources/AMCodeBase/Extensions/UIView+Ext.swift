@@ -62,7 +62,7 @@ public extension UIView {
     
     
     func AddStroke(color:UIColor,strokeWidth:CGFloat = 2){
-       layer.borderWidth = strokeWidth
+        layer.borderWidth = strokeWidth
         layer.borderColor = color.cgColor
         
     }
@@ -124,7 +124,7 @@ public extension UIView {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.color = color
         
-       
+        
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
@@ -135,8 +135,8 @@ public extension UIView {
         activityIndicator.startAnimating()
         return containerView
     }
-
-   
+    
+    
     
     func showEmptyState(img:UIImage,message:String) -> EmptyStateView{
         let emptyStateView  = EmptyStateView(img: img, message: message)
@@ -172,7 +172,7 @@ public extension UIView {
             heightAnchor.constraint(equalToConstant: size.height).isActive = true
         }
     }
-
+    
     func showAlertView(avatarImage:UIImage = AlertImages.lockImage! ,Message:String,buttonLabel:String,buttonImage:UIImage = Images.nextButton!,actionButtonColor:UIColor = .orange){
         
         let containerView = UIView(frame: bounds)
@@ -199,11 +199,11 @@ public extension UIView {
         
         
         containerView.addSubViews(imageAvatar,desc,actionButton)
-
+        
         let padding:CGFloat = 5
         
         NSLayoutConstraint.activate([
-        
+            
             imageAvatar.centerXAnchor.constraint(equalTo: centerXAnchor ),
             imageAvatar.topAnchor.constraint(equalTo: containerView.topAnchor, constant: -35),
             imageAvatar.widthAnchor.constraint(equalToConstant: 100),
@@ -219,8 +219,8 @@ public extension UIView {
             desc.topAnchor.constraint(equalTo: imageAvatar.bottomAnchor,constant: padding),
             desc.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,constant: -padding),
             desc.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -padding)
-    
-        
+            
+            
         ])
         
         imageAvatar.image = avatarImage
@@ -231,7 +231,7 @@ public extension UIView {
         imageAvatar.layer.borderWidth = 3
         bringSubviewToFront(imageAvatar)
         
-       
+        
         
         desc.text = Message
         desc.textColor = .secondaryLabel
@@ -270,4 +270,33 @@ public extension UIView {
             $0.removeFromSuperview()
         }
     }
+    
+    func addTopBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: width)
+        self.layer.addSublayer(border)
+    }
+    
+    func addRightBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: self.frame.size.width - width, y: 0, width: width, height: self.frame.size.height)
+        self.layer.addSublayer(border)
+    }
+    
+    func addBottomBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
+        self.layer.addSublayer(border)
+    }
+    
+    func addLeftBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 0, y: 0, width: width, height: self.frame.size.height)
+        self.layer.addSublayer(border)
+    }
+    
 }
