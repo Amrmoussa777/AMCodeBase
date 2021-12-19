@@ -299,4 +299,35 @@ public extension UIView {
         self.layer.addSublayer(border)
     }
     
+    func showSlidingToast(message : String, font: UIFont? = UIFont.systemFont(ofSize: 15, weight: .semibold)
+                          ,icon:UIImage? ,bGC:UIColor = .red){
+        let toastLabel = UILabel(frame: CGRect(x: 0, y: -100, width: self.frame.size.width , height: 100))
+    
+        
+        toastLabel.backgroundColor = bGC
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center
+        toastLabel.numberOfLines = 0
+        toastLabel.text = "\n" + message
+       
+        
+        addSubview(toastLabel)
+        UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseOut, animations: {
+             toastLabel.frame.origin.y = 0
+        }, completion: {(isCompleted) in
+            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
+                DispatchQueue.main.async {
+                    UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseOut) {
+                        toastLabel.frame.origin.y = -100
+                    } completion: { (isCompleted) in
+                        toastLabel.removeFromSuperview()
+                    }
+                }
+            }
+        })
+        
+    }
+
+    
 }
