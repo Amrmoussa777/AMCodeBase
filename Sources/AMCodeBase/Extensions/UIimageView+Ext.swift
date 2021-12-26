@@ -36,9 +36,9 @@ public extension UIImageView {
     }
     
     
-    func downlaodImagewWithUIimageReturn(fromURL url: String, completed:@escaping (UIImage?)->()) {
+    func downlaodImagewWithUIimageReturn(fromURL url: String, completed:@escaping (UIImage?)->()) ->  URLSessionDataTask? {
         let loading = showImageLoadingLoadingView(color: .systemGreen.withAlphaComponent(0.3) )
-        AMNetworkManager.Shared.downloadImage(from: url) { [weak self] (image) in
+       let task =  AMNetworkManager.Shared.downloadImageAndTAskBack(from: url) { [weak self] (image) in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 loading.removeFromSuperview()
@@ -47,7 +47,7 @@ public extension UIImageView {
                 completed(image)
             }
         }
-        
+        return task
     }
     
     
