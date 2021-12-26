@@ -18,7 +18,7 @@ public extension UIImageView {
                 self.contentMode = .scaleAspectFill
             }
             
-        }
+        } 
         
     }
     
@@ -49,6 +49,8 @@ public extension UIImageView {
         }
         
     }
+    
+    
     
 }
 
