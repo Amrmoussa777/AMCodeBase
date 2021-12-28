@@ -47,6 +47,7 @@ public extension UIImageView {
                 completed(image)
             }
         }
+        
         return task
     }
     

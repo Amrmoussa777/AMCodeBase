@@ -48,7 +48,7 @@ open class AMNetworkManagerBase :loginStatusProtocol{
         task.resume()
     }
     
-    open func downloadImageAndTAskBack(from url:String,completion:@escaping(UIImage)->())->URLSessionDataTask?{
+    open func downloadImageAndTAskBack(from url:String,completion:@escaping(UIImage?)->())->URLSessionDataTask?{
         
         let urlKey = NSString(string: url)
         if let cashedImage = cashe[urlKey]{
@@ -60,13 +60,22 @@ open class AMNetworkManagerBase :loginStatusProtocol{
         
         let task = URLSession.shared.dataTask(with: validUrl){(data,respose,error) in
             //check for error
-            if let _ = error {}
+            if let _ = error {
+                completion(nil)
+                return
+            }
             
             //check response status
-            guard let resonse = respose as?HTTPURLResponse , resonse.statusCode == 200 else{return }
+            guard let resonse = respose as?HTTPURLResponse , resonse.statusCode == 200 else{
+                completion(nil)
+                return
+            }
             
             //check if data is Valid
-            guard let data = data else{return }
+            guard let data = data else{
+                completion(nil)
+                return
+            }
             
             
             guard  let image = UIImage(data: data) else {return}
