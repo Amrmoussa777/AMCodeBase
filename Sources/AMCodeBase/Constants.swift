@@ -103,7 +103,8 @@ public enum DeviceTypes {
     public static let isiPhoneXsMaxAndXr       = idiom == .phone && ScreenSize.maxLength == 896.0
     public static let isiPad                   = idiom == .pad && ScreenSize.maxLength >= 1024.0
     public static let isSmallSEAndMini       = idiom == .phone && ScreenSize.maxLength <= 667.0 && nativeScale == scale
-    
+    public static let isSmallSEAndMiniSize       = idiom == .phone && ScreenSize.maxLength <= 736.0
+
     public static func isiPhoneXAspectRatio() -> Bool {
         return isiPhoneX || isiPhoneXsMaxAndXr
     }
