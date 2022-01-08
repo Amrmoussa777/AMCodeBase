@@ -13,12 +13,12 @@ public extension UILabel {
         font = UIFont.systemFont(ofSize: 15, weight: .thin)
         
         let attributedString = NSMutableAttributedString(string:"\u{2022} "+fString)
-
+        
         let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18)]
         let boldString = NSMutableAttributedString(string: lString, attributes:attrs)
         
         attributedString.append(boldString)
-        
+        textColor = .label
         return attributedString
     }
 
