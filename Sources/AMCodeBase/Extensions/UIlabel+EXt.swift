@@ -18,7 +18,7 @@ public extension UILabel {
         let boldString = NSMutableAttributedString(string: lString, attributes:attrs)
         
         attributedString.append(boldString)
-        textColor = .label
+        textColor = .black
         return attributedString
     }
 
