@@ -8,7 +8,7 @@
 import UIKit
 
 
-extension UILabel {
+public extension UILabel {
     func setMBSettingAtrributedText(fString:String,lString:String)->NSAttributedString{
         font = UIFont.systemFont(ofSize: 15, weight: .thin)
         
