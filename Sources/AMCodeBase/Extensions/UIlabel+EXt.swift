@@ -10,16 +10,18 @@ import UIKit
 
 public extension UILabel {
     func setMBSettingAtrributedText(fString:String,lString:String)->NSAttributedString{
-        font = UIFont.systemFont(ofSize: 15, weight: .thin)
-        
-        let attributedString = NSMutableAttributedString(string:"\u{2022} "+fString)
-        
-        let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18)]
+        font = UIFont.systemFont(ofSize: 20, weight: .regular)
+        let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 25)]
+       
+        let attributedString = NSMutableAttributedString(string:fString)
+        let dotString = NSMutableAttributedString(string: "\u{2022} ", attributes:attrs)
         let boldString = NSMutableAttributedString(string: lString, attributes:attrs)
         
-        attributedString.append(boldString)
+        
+        dotString.append(attributedString)
+        dotString.append(boldString)
         textColor = .black
-        return attributedString
+        return dotString
     }
 
 }
