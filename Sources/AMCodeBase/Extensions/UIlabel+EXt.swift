@@ -10,8 +10,8 @@ import UIKit
 
 public extension UILabel {
     func setMBSettingAtrributedText(fString:String,lString:String)->NSAttributedString{
-        font = UIFont.systemFont(ofSize: 20, weight: .regular)
-        let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 25)]
+        font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 22)]
        
         let attributedString = NSMutableAttributedString(string:fString)
         let dotString = NSMutableAttributedString(string: "\u{2022} ", attributes:attrs)
