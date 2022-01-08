@@ -27,7 +27,7 @@ public extension UILabel {
     
     func  setMBSettingAtrributedText(fString:String,lString:String,IMG:UIImage)->NSAttributedString{
         let attachment = NSTextAttachment()
-        attachment.image = IMG.withTintColor(.white)
+        attachment.image = IMG.withTintColor(.systemGreen)
         attachment.bounds = CGRect(x: 0, y: 0, width: 30, height: 17)
         let attachmentStr = NSAttributedString(attachment: attachment)
         
