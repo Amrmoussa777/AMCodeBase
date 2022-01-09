@@ -48,7 +48,7 @@ public extension UILabel {
     
     func  setMBSettingAtrributedTextInTheEndOfText(fString:String,lString:String,IMG:UIImage)->NSAttributedString{
         let attachment = NSTextAttachment()
-        attachment.image = IMG.withTintColor(.systemGreen)
+        attachment.image = IMG.withTintColor(.black)
         attachment.bounds = CGRect(x: 0, y: 0, width: 30, height: 17)
         let attachmentStr = NSAttributedString(attachment: attachment)
         
@@ -56,7 +56,7 @@ public extension UILabel {
         let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 20)]
         
         let attributedString = NSMutableAttributedString(string:fString)
-        let dotString = NSMutableAttributedString(string: "", attributes:attrs)
+        let dotString = NSMutableAttributedString(string:  "\u{2022} ", attributes:attrs)
         let boldString = NSMutableAttributedString(string: lString, attributes:attrs)
         
        
