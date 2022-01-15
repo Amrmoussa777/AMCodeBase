@@ -67,8 +67,14 @@ public extension UILabel {
         return dotString
     }
 
-    func getSUNameAttributedText()->NSAttributedString{
-        // updating UIlabel by adding attribuetd text method .
-        return NSAttributedString(string: "medo222345")
-    }
+
+    func getSUNameAttributedText(name:String,time:String)->NSAttributedString{
+        font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        let attrs = [NSAttributedString.Key.foregroundColor : UIColor.systemGray5]
+       
+        let attributedString = NSMutableAttributedString(string:name + " ")
+        let timeString = NSMutableAttributedString(string: time, attributes:attrs)
+        
+        attributedString.append(timeString)
+        return attributedString
 }
