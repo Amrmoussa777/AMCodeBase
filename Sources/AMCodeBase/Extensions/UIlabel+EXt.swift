@@ -67,4 +67,7 @@ public extension UILabel {
         return dotString
     }
 
+    func getSUNameAttributedText()->NSAttributedString{
+        return NSAttributedString(string: "")
+    }
 }
