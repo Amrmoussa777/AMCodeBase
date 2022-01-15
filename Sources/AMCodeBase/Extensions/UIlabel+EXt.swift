@@ -67,6 +67,7 @@ public extension UILabel {
         return dotString
     }
 
+
     func getSUNameAttributedText(name:String,time:String)->NSAttributedString{
         font = UIFont.systemFont(ofSize: 16, weight: .regular)
         let attrs = [NSAttributedString.Key.foregroundColor : UIColor.systemGray5]
@@ -76,5 +77,4 @@ public extension UILabel {
         
         attributedString.append(timeString)
         return attributedString
-    }
 }
