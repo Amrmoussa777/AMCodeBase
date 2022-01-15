@@ -68,6 +68,6 @@ public extension UILabel {
     }
 
     func getSUNameAttributedText()->NSAttributedString{
-        return NSAttributedString(string: "")
+        return NSAttributedString(string: "medo")
     }
 }
