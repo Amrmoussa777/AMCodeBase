@@ -68,7 +68,7 @@ public extension UILabel {
     }
 
     func getSUNameAttributedText()->NSAttributedString{
-        // updating UIlabel
+        // updating UIlabel by adding attribuetd text method .
         return NSAttributedString(string: "medo222345")
     }
 }
