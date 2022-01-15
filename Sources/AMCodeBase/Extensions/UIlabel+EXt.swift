@@ -69,12 +69,12 @@ public extension UILabel {
 
 
     func getSUNameAttributedText(name:String,time:String)->NSAttributedString{
+        // create UIlabel attributed text documentaion
         font = UIFont.systemFont(ofSize: 16, weight: .regular)
         let attrs = [NSAttributedString.Key.foregroundColor : UIColor.systemGray5]
-       
         let attributedString = NSMutableAttributedString(string:name + " ")
         let timeString = NSMutableAttributedString(string: time, attributes:attrs)
-        
         attributedString.append(timeString)
         return attributedString
+}
 }
