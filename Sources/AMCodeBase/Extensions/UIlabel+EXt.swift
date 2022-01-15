@@ -77,3 +77,4 @@ public extension UILabel {
         attributedString.append(timeString)
         return attributedString
 }
+}
