@@ -12,7 +12,7 @@ public extension UILabel {
     func setMBSettingAtrributedText(fString:String,lString:String)->NSAttributedString{
         font = UIFont.systemFont(ofSize: 17, weight: .regular)
         let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 20)]
-       
+        
         let attributedString = NSMutableAttributedString(string:fString)
         let dotString = NSMutableAttributedString(string: "\u{2022} ", attributes:attrs)
         let boldString = NSMutableAttributedString(string: lString, attributes:attrs)
@@ -59,15 +59,15 @@ public extension UILabel {
         let dotString = NSMutableAttributedString(string:  "\u{2022} ", attributes:attrs)
         let boldString = NSMutableAttributedString(string: lString, attributes:attrs)
         
-       
+        
         dotString.append(attributedString)
         dotString.append(boldString)
         dotString.append(attachmentStr)
         textColor = .black
         return dotString
     }
-
-
+    
+    
     func getSUNameAttributedText(name:String,time:String)->NSAttributedString{
         // create UIlabel attributed text documentaion
         font = UIFont.systemFont(ofSize: 17, weight: .regular)
@@ -77,5 +77,5 @@ public extension UILabel {
         let timeString = NSMutableAttributedString(string: time, attributes:attrs)
         attributedString.append(timeString)
         return attributedString
-}
+    }
 }

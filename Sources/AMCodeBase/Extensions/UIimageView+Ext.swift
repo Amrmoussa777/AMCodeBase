@@ -10,12 +10,13 @@ import UIKit
 
 public extension UIImageView {
     
-    func downloadImage(fromURL url: String) {
+    func downloadImage(fromURL url: String,completed:(()->())? = nil) {
         AMNetworkManager.Shared.downloadImage(from: url) { [weak self] (image) in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.image = image
                 self.contentMode = .scaleAspectFill
+                completed?()
             }
             
         } 
