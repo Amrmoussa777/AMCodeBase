@@ -61,7 +61,7 @@ open class AMCView<cellType:AMCollectionViewCell,Item:Codable>: UIView,
         chanegCellSize()
     }
     
-    
+    open func numberOfSections(in collectionView: UICollectionView) -> Int {1}
     
     open  func registerNewCell(newCell:AMCollectionViewCell.Type){
         AMCollectionView.register(newCell.self, forCellWithReuseIdentifier:newCell.cellID)
@@ -100,5 +100,9 @@ open class AMCView<cellType:AMCollectionViewCell,Item:Codable>: UIView,
     open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {}
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {}
     open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {}
+    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {return .zero}
+    open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        return UICollectionReusableView()
+    }
 }
 
