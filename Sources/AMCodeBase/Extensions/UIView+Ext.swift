@@ -330,4 +330,91 @@ public extension UIView {
     }
 
     
+    
+    
+        func getRootVC()-> UIViewController?{
+            guard let window = self.window  else  {return nil}
+            guard var topController = window.rootViewController else{return nil}
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            return topController
+        }
+        
+        
+        func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+            let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+            let mask = CAShapeLayer()
+            mask.path = path.cgPath
+            layer.mask = mask
+        }
+        
+        
+        func addTappGesture(delegate:Any?,action:Selector?){
+            isUserInteractionEnabled  = true
+            let tappGetsure = UITapGestureRecognizer(target: delegate, action: action)
+            tappGetsure.cancelsTouchesInView = false
+            addGestureRecognizer(tappGetsure)
+        }
+        
+        func addShadow(opacity:Float,color:UIColor){
+            layer.shadowColor = color.cgColor
+            layer.shadowOpacity = opacity
+            layer.shadowOffset = .zero
+            layer.shadowRadius = 10
+            layer.masksToBounds = false
+        }
+        
+        
+        // e.g
+        //    let topPoint = CGPoint(x: view.frame.midX, y: view.bounds.minY)
+        //    let bottomPoint = CGPoint(x: view.frame.midX, y: view.bounds.maxY)
+        //
+        //    view.createDashedLine(from: topPoint, to: bottomPoint, color: .black, strokeLength: 4, gapLength: 6, width: 2)
+        
+        func createDashedLine(from point1: CGPoint, to point2: CGPoint, color: UIColor, strokeLength: NSNumber, gapLength: NSNumber, width: CGFloat) -> CAShapeLayer{
+            let shapeLayer = CAShapeLayer()
+            
+            shapeLayer.strokeColor = color.cgColor
+            shapeLayer.lineWidth = width
+            shapeLayer.lineDashPattern = [strokeLength, gapLength]
+            
+            let path = CGMutablePath()
+            path.addLines(between: [point1, point2])
+            shapeLayer.path = path
+            layer.addSublayer(shapeLayer)
+            return shapeLayer
+        }
+        
+        
+        var globalPoint :CGPoint? {
+            return self.superview?.convert(self.frame.origin, to: nil)
+        }
+        
+        var globalFrameToSuperView :CGRect? {
+            return self.superview?.convert(self.frame, to: nil)
+        }
+        
+        var globalFrame: CGRect? {
+            let rootView = getRootVC()?.view
+            return self.superview?.convert(self.frame, to: rootView)
+        }
+        
+        // <SpirUp.PostInfoView: 0x10df41d10; frame = (10 170; 355 30); layer = <CALayer: 0x283de00e0>>
+
+        func getSubviewsOfView<T>(v:UIView,typeOF:T.Type) -> [T] {
+            var circleArray = [T]()
+
+            for subview in v.subviews  {
+                circleArray += getSubviewsOfView(v: subview,typeOF: typeOF)
+
+                if subview is T {
+                    circleArray.append(subview as! T)
+                }
+            }
+            return circleArray
+        }
+        
+    
+
 }
