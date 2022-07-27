@@ -102,6 +102,11 @@ open class AMCView<cellType:AMCollectionViewCell,Item:Codable>: UIView,
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {}
     open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {}
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {return .zero}
+    
+    open  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return  .zero
+    }
+    
     open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         return UICollectionReusableView()
     }
